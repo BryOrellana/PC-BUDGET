@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.mauricio.moviles_bg2m.main_views.ProductsFragment"
+        android:label="@string/Productos"
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Procesadores"
+            app:destination="@id/categories_Procesadores" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Tarj_video"
+            app:destination="@id/categories_Tarj_video" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Memorias"
+            app:destination="@id/categories_Memorias" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Tarj_Madre"
+            app:destination="@id/categories_Tarj_Madre" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_almacenamiento"
+            app:destination="@id/categories_almacenamiento" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Fuentes_Poder"
+            app:destination="@id/categories_Fuentes_Poder" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_Gabinetes"
+            app:destination="@id/categories_Gabinetes" />
+        <action
+            android:id="@+id/action_productsFragment_to_categories_laptop"
+            app:destination="@id/categories_Comp_completa" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.mauricio.moviles_bg2m.main_views.BudgetFragment"
+        android:label="@string/presupuesto"
+        tools:layout="@layout/fragment_budget">
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Procesadores"
+            app:destination="@id/categories_Procesadores" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Tarj_video"
+            app:destination="@id/categories_Tarj_video" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Memorias"
+            app:destination="@id/categories_Memorias" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Tarj_Madre"
+            app:destination="@id/categories_Tarj_Madre" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_almacenamiento"
+            app:destination="@id/categories_almacenamiento" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Fuentes_Poder"
+            app:destination="@id/categories_Fuentes_Poder" />
+        <action
+            android:id="@+id/action_budgetFragment_to_categories_Gabinetes"
+            app:destination="@id/categories_Gabinetes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.mauricio.moviles_bg2m.main_views.MoreFragment"
+        android:label="@string/mas"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_moreFragment_to_fragment_subirproducto2"
+            app:destination="@id/fragment_subirproducto2" />
+    </fragment>
+    <action
+        android:id="@+id/action_moreFragment_to_changePasswordFragment2"
+        app:destination="@id/changePasswordFragment2" />
+    <action
+        android:id="@+id/action_moreFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+    <action
+        android:id="@+id/action_moreFragment_to_fragment_subirproducto2"
+        app:destination="@id/fragment_subirproducto2" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mauricio.moviles_bg2m.moreFragmentViews.LoginFragment"
+        android:label="Iniciar sesión"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.mauricio.moviles_bg2m.moreFragmentViews.SignupFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mauricio.moviles_bg2m.main_views.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_savedBudgetFragment"
+            app:destination="@id/savedBudgetFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categories_almacenamiento"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesAlmacenamiento"
+        android:label="Almacenamiento"/>
+
+    <fragment
+        android:id="@+id/categories_Tarj_video"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesTarjVideo"
+        android:label="Tarjetas de video" />
+
+    <fragment
+        android:id="@+id/categories_Tarj_Madre"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesTarjMadre"
+        android:label="Tarjetas madre"/>
+
+    <fragment
+        android:id="@+id/categories_Procesadores"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesProcesadores"
+        android:label="Procesadores">
+        <action
+            android:id="@+id/action_categories_Procesadores_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categories_Memorias"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesMemorias"
+        android:label="Memorias ram"/>
+
+    <fragment
+        android:id="@+id/categories_Gabinetes"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesGabinetes"
+        android:label="Gabinetes" />
+
+    <fragment
+        android:id="@+id/categories_Fuentes_Poder"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesFuentesPoder"
+        android:label="Fuentes de poder" />
+
+
+    <fragment
+        android:id="@+id/savedBudgetFragment"
+        android:name="com.mauricio.moviles_bg2m.main_views.SavedBudgetFragment"
+        android:label="{dynamicTitle}"
+        tools:layout="@layout/fragment_saved_budget">
+        <argument
+            android:name="dynamicTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Fuentes_Poder"
+            app:destination="@id/categories_Fuentes_Poder" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_almacenamiento"
+            app:destination="@id/categories_almacenamiento" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Gabinetes"
+            app:destination="@id/categories_Gabinetes" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Memorias"
+            app:destination="@id/categories_Memorias" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categories_Comp_completa"
+        android:name="com.mauricio.moviles_bg2m.categories.CategoriesCompCompleta"
+        android:label="Laptops"
+        tools:layout="@layout/fragment_categories_inside" />
+
+    <fragment
+        android:id="@+id/changePasswordFragment2"
+        android:name="com.mauricio.moviles_bg2m.moreFragmentViews.ChangePasswordFragment"
+        android:label="@string/cambiar_contra_tv"
+        tools:layout="@layout/fragment_changepassword">
+        <action
+            android:id="@+id/action_changePasswordFragment2_to_moreFragment"
+            app:destination="@id/moreFragment"
+            app:popUpTo="@id/moreFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/descriptionProductFragment"
+        android:name="com.mauricio.moviles_bg2m.moreFragmentViews.DescriptionProductFragment"
+        android:label="Procesadores"
+        tools:layout="@layout/fragment_product_description" />
+
+    <fragment
+        android:id="@+id/fragment_subirproducto2"
+        android:name="com.mauricio.moviles_bg2m.fragment_subirproducto"
+        android:label="Subir Producto"
+        tools:layout="@layout/fragment_subirproducto" />
+
+</navigation>

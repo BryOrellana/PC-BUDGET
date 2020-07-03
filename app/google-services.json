@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "494528188998",
+    "firebase_url": "https://pc-budget.firebaseio.com",
+    "project_id": "pc-budget",
+    "storage_bucket": "pc-budget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494528188998:android:232ec6d2686106a23eb047",
+        "android_client_info": {
+          "package_name": "com.mauricio.moviles_bg2m"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494528188998-7paa81njgseqej7o6612go20h79n9gqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaA7dAX1nV1V6K56Fwi10IELueUw-Vzuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494528188998-7paa81njgseqej7o6612go20h79n9gqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

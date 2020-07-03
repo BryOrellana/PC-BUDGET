@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".moreFragmentViews.DescriptionProductFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/add_btn_product_desc"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:layout_marginEnd="@dimen/bigMargin_60dp"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:background="@drawable/boton_redondo"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/agregar_txt_btn_product"
+                android:textColor="@color/backgroundWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/see_on_amazon"
+                app:layout_constraintTop_toBottomOf="@+id/especificaciones_title2" />
+
+            <Button
+                android:id="@+id/see_on_amazon"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/bigMargin_60dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@drawable/btn_round_orange"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/ver_en_amazon"
+                android:textColor="@color/backgroundWhite"
+                app:layout_constraintEnd_toStartOf="@+id/add_btn_product_desc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/add_btn_product_desc" />
+
+            <ImageView
+                android:id="@+id/img_producto_desc"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/bigMargin_60dp"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/bigMargin_60dp"
+                android:src="@drawable/procesador"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/img_rating_starts_desc"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:src="@drawable/rating_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_producto_desc"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/titletxt_product_processor"
+                android:textAlignment="center"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_cpu" />
+
+            <TextView
+                android:id="@+id/especificaciones_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/especificaciones"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/especificaciones_title2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/especificaciones_txt"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/especificaciones_title"
+                app:layout_constraintTop_toBottomOf="@+id/especificaciones_title" />
+
+            <TextView
+                android:id="@+id/price_cpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/price_cpu_text"
+                android:textColor="@color/redColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_rating_starts_desc" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

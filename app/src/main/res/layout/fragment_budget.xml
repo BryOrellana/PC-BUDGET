@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main_views.BudgetFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundWhite">
+
+
+            <TextView
+                android:id="@+id/title_components"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:text="@string/Components_text"
+                app:layout_constraintBottom_toTopOf="@+id/separador"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separador"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginBottom="8dp"
+                android:background="@color/blueColor"
+                app:layout_constraintBottom_toTopOf="@+id/processor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_components" />
+
+
+            <!--Procesador-->
+            <TextView
+                android:id="@+id/processor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/title_processor"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_graphic_card"
+                app:layout_constraintTop_toBottomOf="@+id/separador" />
+
+            <ImageView
+                android:id="@+id/img_processor_added"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="@dimen/margin_30dp"
+                android:layout_marginEnd="@dimen/margin_30dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/txt_add_processor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/processor"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/txt_add_processor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_procesador"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/img_processor_added"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/processor"
+                app:layout_constraintTop_toTopOf="@+id/img_processor_added"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <View
+                android:id="@+id/separador_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_processor_added" />
+
+
+            <!--tarjeta grafica-->
+            <TextView
+                android:id="@+id/title_your_graphic_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/title_graphic_card"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_memory_ram"
+                app:layout_constraintTop_toBottomOf="@+id/separador_1" />
+
+            <ImageView
+                android:id="@+id/img_graphic_added"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/txt_add_graphic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_processor_added"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_graphic_card"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/txt_add_graphic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_TG"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/img_graphic_added"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_graphic_card"
+                app:layout_constraintTop_toTopOf="@+id/img_graphic_added" />
+
+            <View
+                android:id="@+id/separador_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_graphic_added" />
+
+
+            <!--memoria ram-->
+            <TextView
+                android:id="@+id/title_your_memory_ram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tu_memoria_ram"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separador_2" />
+
+            <ImageView
+                android:id="@+id/btn_add_ram"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/name_ram"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_graphic_added"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_memory_ram"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/name_ram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_ram"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_add_ram"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_memory_ram"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_ram"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <View
+                android:id="@+id/separador_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_ram" />
+
+
+            <!--tarjeta madre-->
+            <TextView
+                android:id="@+id/title_your_mother_board"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/title_MB"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/name_ram"
+                app:layout_constraintTop_toBottomOf="@+id/separador_3" />
+
+            <ImageView
+                android:id="@+id/img_motherboard_added"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/name_motherboard"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/btn_add_ram"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_mother_board"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/name_motherboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_TM"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/img_motherboard_added"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_mother_board"
+                app:layout_constraintTop_toTopOf="@+id/img_motherboard_added" />
+
+            <View
+                android:id="@+id/separador_4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_motherboard_added" />
+
+
+            <!--almacenamiento-->
+
+            <TextView
+                android:id="@+id/title_your_storage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tu_almacenamiento"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/name_motherboard"
+                app:layout_constraintTop_toBottomOf="@+id/separador_4" />
+
+            <ImageView
+                android:id="@+id/btn_add_storage"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/txt_add_storage"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_motherboard_added"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_storage"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/txt_add_storage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_almacenamiento"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_add_storage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_storage"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_storage" />
+
+            <View
+                android:id="@+id/separador_5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_storage" />
+
+
+            <!--Fuente de poder-->
+            <TextView
+                android:id="@+id/title_your_power_supply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tu_fuente_de_poder"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_add_storage"
+                app:layout_constraintTop_toBottomOf="@+id/separador_5" />
+
+            <ImageView
+                android:id="@+id/btn_add_power"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/txt_add_power"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/btn_add_storage"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_power_supply"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/txt_add_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_fuente_de_poder"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_add_power"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_power_supply"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_power" />
+
+            <View
+                android:id="@+id/separador_6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_power" />
+
+
+            <!--case-->
+            <TextView
+                android:id="@+id/title_your_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tu_gabinete"
+                android:textColor="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_add_power"
+                app:layout_constraintTop_toBottomOf="@+id/separador_6" />
+
+            <ImageView
+                android:id="@+id/btn_add_case"
+                android:layout_width="95dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:contentDescription="@string/agregar_procesador_icono"
+                app:layout_constraintEnd_toStartOf="@+id/txt_add_case"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/btn_add_power"
+                app:layout_constraintTop_toBottomOf="@+id/title_your_case"
+                app:srcCompat="@drawable/ic_add_circle"
+                tools:ignore="KeyboardInaccessibleWidget" />
+
+            <TextView
+                android:id="@+id/txt_add_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/añadir_case"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_add_case"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title_your_case"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_case" />
+
+            <View
+                android:id="@+id/separador_7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin_24dp"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/bigMargin_60dp"
+                android:background="@color/blueColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_case" />
+
+            <Button
+                android:id="@+id/Total"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/bigMargin_60dp"
+                android:background="@drawable/boton_redondo_2"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/total_btn_text"
+                android:textColor="@color/backgroundWhite"
+                android:textColorHighlight="@color/blueColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/save_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separador_7" />
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/bigMargin_60dp"
+                android:background="@drawable/boton_redondo"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/Guardar_boton"
+                android:textColor="@color/backgroundWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/Total"
+                app:layout_constraintTop_toBottomOf="@+id/separador_7" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

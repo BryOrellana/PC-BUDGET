@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/backgroundWhite"
+    app:cardMaxElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_product"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginTop="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:layout_marginBottom="@dimen/card_margin"
+        android:background="@drawable/backbround_for_products_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_view_product"
+            android:layout_width="135dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/Product_Image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/name_product"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="textStart"
+            android:textColor="@color/backgroundWhite"
+            android:textSize="@dimen/OpcionesSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/image_view_product"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_product_nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginTop="@dimen/medium_margin_24dp"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="textStart"
+            android:textColor="@color/backgroundWhite"
+            android:textSize="@dimen/OpcionesSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txtView_calificacion"
+            app:layout_constraintTop_toBottomOf="@+id/name_product" />
+
+        <TextView
+            android:id="@+id/txtView_calificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/calificacion_txt"
+            android:textAlignment="textStart"
+            android:textColor="@color/backgroundWhite"
+            android:textSize="@dimen/OpcionesSize"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_product_nota"
+            app:layout_constraintStart_toStartOf="@+id/name_product" />
+
+        <TextView
+            android:id="@+id/text_view_product_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginTop="@dimen/medium_margin_24dp"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="textStart"
+            android:textColor="@color/backgroundWhite"
+            android:textSize="@dimen/OpcionesSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txtView_precio"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_product_nota"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtView_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/precio"
+            android:textAlignment="textStart"
+            android:textColor="@color/backgroundWhite"
+            android:textSize="@dimen/OpcionesSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_product_precio"
+            app:layout_constraintStart_toStartOf="@+id/txtView_calificacion" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

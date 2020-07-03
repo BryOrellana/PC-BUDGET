@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main_views.MoreFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundWhite"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/cuentaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_cuenta"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separador1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/separador_size"
+                android:background="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cuentaTitle" />
+
+            <TextView
+                android:id="@+id/cambiar_contra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin_24dp"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:focusable="true"
+                android:text="@string/cambiar_contra_tv"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separador1" />
+
+            <TextView
+                android:id="@+id/nosotrosTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:text="@string/titulo_nosotros"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/cuentaTitle"
+                app:layout_constraintTop_toBottomOf="@+id/cambiar_contra" />
+
+            <View
+                android:id="@+id/separador2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/separador_size"
+                android:background="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nosotrosTitle" />
+
+            <TextView
+                android:id="@+id/objetivosTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:focusable="true"
+                android:text="@string/objetivo"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/cambiar_contra"
+                app:layout_constraintTop_toBottomOf="@+id/separador2" />
+
+            <TextView
+                android:id="@+id/acercaDeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:focusable="true"
+                android:text="@string/acerca_de"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/objetivosTxt"
+                app:layout_constraintTop_toBottomOf="@+id/objetivosTxt" />
+
+            <TextView
+                android:id="@+id/quienesSomosTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:focusable="true"
+                android:text="@string/quienes_somos"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/acercaDeTxt"
+                app:layout_constraintTop_toBottomOf="@+id/acercaDeTxt" />
+
+            <TextView
+                android:id="@+id/contactoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:text="@string/redes_sociales_y_contacto"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/nosotrosTitle"
+                app:layout_constraintTop_toBottomOf="@+id/quienesSomosTxt" />
+
+            <View
+                android:id="@+id/separador3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/separador_size"
+                android:background="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactoTitle" />
+
+            <TextView
+                android:id="@+id/telefonoTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:text="@string/telefono_2220_3456"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/quienesSomosTxt"
+                app:layout_constraintTop_toBottomOf="@+id/contactoTitle" />
+
+            <TextView
+                android:id="@+id/Twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:text="@string/twitter_pc_budget_bg2m"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/telefonoTxt"
+                app:layout_constraintTop_toBottomOf="@+id/telefonoTxt" />
+
+            <TextView
+                android:id="@+id/Facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:text="@string/pc_budget_bg2m"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Twitter"
+                app:layout_constraintTop_toBottomOf="@+id/Twitter" />
+
+            <TextView
+                android:id="@+id/Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:drawableStart="@drawable/ic_fiber_manual_record_black_24dp"
+                android:text="@string/email_bg2m_group_gmail_com"
+                android:textSize="@dimen/small_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Facebook"
+                app:layout_constraintTop_toBottomOf="@+id/Facebook" />
+
+            <Button
+                android:id="@+id/btn_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/bigMargin_60dp"
+                android:background="@drawable/boton_redondo"
+                android:padding="11dp"
+                android:text="@string/iniciar_sesion"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSize_24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Email" />
+
+            <Button
+                android:id="@+id/btn_subir_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:background="@drawable/boton_redondo"
+                android:text="subir productos "
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSize_24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sesion" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

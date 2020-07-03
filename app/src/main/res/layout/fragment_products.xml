@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main_views.ProductsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttn_videocard"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_cpu"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/video_card"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_memories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_processor" />
+
+            <Button
+                android:id="@+id/built_pc_button"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_laptops"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/laptops"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/build_pc_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/build_pc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:text="@string/piezas_txt"
+                app:layout_constraintBottom_toTopOf="@+id/button_processor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/built_pc_button" />
+
+            <Button
+                android:id="@+id/button_processor"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_processor"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/processor"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/buttn_videocard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/build_pc_text" />
+
+            <Button
+                android:id="@+id/button_memories"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_ram"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/memories"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_motherboard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttn_videocard" />
+
+            <Button
+                android:id="@+id/button_motherboard"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_motherboard"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/motherboards"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_storage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_memories" />
+
+            <Button
+                android:id="@+id/button_storage"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_storages"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/storage"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_power_supply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_motherboard" />
+
+            <Button
+                android:id="@+id/button_case"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_cases"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/cases"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_power_supply" />
+
+            <Button
+                android:id="@+id/button_power_supply"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_weight="1"
+                android:background="@drawable/button_gradient"
+                android:drawableStart="@drawable/ic_power_supply"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/power_supply"
+                android:textColor="@color/backgroundWhite"
+                android:textSize="@dimen/textSize_20sp"
+                app:layout_constraintBottom_toTopOf="@+id/button_case"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_storage" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
