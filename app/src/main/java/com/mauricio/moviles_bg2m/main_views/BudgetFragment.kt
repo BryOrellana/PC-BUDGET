@@ -19,11 +19,11 @@ class BudgetFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate<FragmentBudgetBinding>(inflater,
             R.layout.fragment_budget,container,false)
-        //navBtnAdd()
+        navBtnAdd()
         return binding.root
     }
 
-    /*private fun navBtnAdd(){
+    private fun navBtnAdd(){
         binding.apply {
             txtAddProcessor.setOnClickListener { view: View ->
                 view.findNavController().navigate(R.id.action_budgetFragment_to_categories_Procesadores)
@@ -47,5 +47,5 @@ class BudgetFragment : Fragment() {
                 view.findNavController().navigate(R.id.action_budgetFragment_to_categories_Gabinetes)
             }
         }
-    }*/
+    }
 }
