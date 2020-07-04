@@ -22,16 +22,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CategoriesFuentesPoder : Fragment() {
     private lateinit var binding: FragmentCategoriesInsideBinding
     private val mPowerSourcesIds = listOf<String>(
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "-MBMIbMs6xtBwlKWHYiL",
+        "-MBMJDdXXYerPIllAhqF",
+        "-MBMJ_PqKRrsRNAjpvgO",
+        "-MBMJvO2SUBLa1YZpv0U",
+        "-MBMKG88zkW4PJm5ymr8",
+        "-MBMKRYj1Fpqq85tzlP1",
+        "-MBMKboALjoDBsMZuvqW",
+        "-MBMKboALjoDBsMZuvqW",
+        "-MBMKuMa-aZtRLRUfheq",
+        "-MBML6eo5vvbg51c9vjW"
     )
 
     override fun onCreateView(

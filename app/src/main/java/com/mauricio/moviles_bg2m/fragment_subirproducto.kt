@@ -136,6 +136,7 @@ class fragment_subirproducto : Fragment() {
                     Toast.makeText(context, "Upload Successful", Toast.LENGTH_SHORT).show()
 
                     binding.apply {
+                        idProduct.text.clear()
                         nameProductET.text.clear()
                         DescProductET.text.clear()
                         priceProductET.text.clear()

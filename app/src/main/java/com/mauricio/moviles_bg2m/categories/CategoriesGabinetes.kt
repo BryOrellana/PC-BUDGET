@@ -21,16 +21,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CategoriesGabinetes : Fragment() {
     private lateinit var binding: FragmentCategoriesInsideBinding
     private val mCasesIds = listOf<String>(
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "-MBME9ZgjszNPOuCJyNQ",
+        "-MBMEXsE-0jMDUz-d_sk",
+        "-MBMEt-1oXncclU_grgq",
+        "-MBMFJSi0M7kpG7_qUOp",
+        "-MBMFYPyN7HzEXt3cNzu",
+        "-MBMFnUngdi6EiuYkOQn",
+        "-MBMG_yImbk0KXY02AjR",
+        "-MBMHCA5Tn3KKKqxbujh",
+        "-MBMHQq0Ox7C_RhqVkZo",
+        "-MBMHeHzDVRGcbKWQBQ0"
     )
 
 

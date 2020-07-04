@@ -23,16 +23,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CategoriesAlmacenamiento : Fragment() {
     lateinit var binding: FragmentCategoriesInsideBinding
     private val mStoragesIds = listOf<String>(
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "-MBM9ZrgNCv08p_r0_Ly",
+        "-MBMA2Sqx18qmQTn85Uz",
+        "-MBMAVEkaVuxvRlC3vko",
+        "-MBMB1M_q744LKJrTojy",
+        "-MBMBGLNzUA3RpadNR79",
+        "-MBMBUdHmW4ucUx-tuR9",
+        "-MBMBnwyzzmqzsw6UuRD",
+        "-MBMCABQi5-LBs8Yo05c",
+        "-MBMCKN7FjRYSje5FhQZ",
+        "-MBMCYTzaWhCPpvg4PMi"
     )
     private var coso = 1
 

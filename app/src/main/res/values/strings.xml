@@ -79,7 +79,7 @@
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="componentes_juntos">Esta sera una descripcion del usuario. Esta sera una descripcion del usuario. Esta sera una descripcion del usuario.
     Esta sera una descripcion del usuario. </string>
-    <string name="precio">Precio:</string>
+    <string name="precio">Precio(US$):</string>
     <string name="titleBudget">titulo</string>
     <string name="titletxt_product_processor">Intel Xeon E3-1230 Desktop Processor 8 Cores up to 5.0 GHz Turbo unlocked LGA1151 300</string>
     <string name="price_proccesor_product">Precio: $533.95</string>
