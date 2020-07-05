@@ -14,5 +14,6 @@
     <dimen name="separador_size">1dp</dimen>
     <dimen name="margin_80dp">80dp</dimen>
     <dimen name="card_margin">4dp</dimen>
+    <dimen name="margin_88dp">88dp</dimen>
 
 </resources>

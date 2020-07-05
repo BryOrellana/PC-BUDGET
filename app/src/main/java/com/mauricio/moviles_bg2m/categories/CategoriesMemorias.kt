@@ -32,6 +32,7 @@ class CategoriesMemorias : Fragment() {
         "-MBJ2-rNNI-78sl8dn5a",
         "-MBJ2BEUjcuMTsghl-in"
     )
+    val fReference = "memories"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,7 +71,7 @@ class CategoriesMemorias : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products,fReference)
         }
     }
 

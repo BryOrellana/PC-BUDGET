@@ -33,7 +33,7 @@
             app:destination="@id/categories_Gabinetes" />
         <action
             android:id="@+id/action_productsFragment_to_categories_laptop"
-            app:destination="@id/categories_Comp_completa" />
+            app:destination="@id/categories_laptops" />
     </fragment>
 
     <fragment
@@ -123,17 +123,29 @@
     <fragment
         android:id="@+id/categories_almacenamiento"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesAlmacenamiento"
-        android:label="Almacenamiento"/>
+        android:label="Almacenamiento">
+        <action
+            android:id="@+id/action_categories_almacenamiento_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/categories_Tarj_video"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesTarjVideo"
-        android:label="Tarjetas de video" />
+        android:label="Tarjetas de video" >
+        <action
+            android:id="@+id/action_categories_Tarj_video_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/categories_Tarj_Madre"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesTarjMadre"
-        android:label="Tarjetas madre"/>
+        android:label="Tarjetas madre">
+        <action
+            android:id="@+id/action_categories_Tarj_Madre_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/categories_Procesadores"
@@ -147,17 +159,29 @@
     <fragment
         android:id="@+id/categories_Memorias"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesMemorias"
-        android:label="Memorias ram"/>
+        android:label="Memorias ram">
+        <action
+            android:id="@+id/action_categories_Memorias_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/categories_Gabinetes"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesGabinetes"
-        android:label="Gabinetes" />
+        android:label="Gabinetes" >
+        <action
+            android:id="@+id/action_categories_Gabinetes_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/categories_Fuentes_Poder"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesFuentesPoder"
-        android:label="Fuentes de poder" />
+        android:label="Fuentes de poder" >
+        <action
+            android:id="@+id/action_categories_Fuentes_Poder_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
 
     <fragment
@@ -186,10 +210,14 @@
     </fragment>
 
     <fragment
-        android:id="@+id/categories_Comp_completa"
+        android:id="@+id/categories_laptops"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesCompCompleta"
         android:label="Laptops"
-        tools:layout="@layout/fragment_categories_inside" />
+        tools:layout="@layout/fragment_categories_inside" >
+        <action
+            android:id="@+id/action_categories_laptops_to_descriptionProductFragment"
+            app:destination="@id/descriptionProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/changePasswordFragment2"
@@ -207,7 +235,28 @@
         android:id="@+id/descriptionProductFragment"
         android:name="com.mauricio.moviles_bg2m.moreFragmentViews.DescriptionProductFragment"
         android:label="Procesadores"
-        tools:layout="@layout/fragment_product_description" />
+        tools:layout="@layout/fragment_product_description" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="pName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="pPrice"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="pRank"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="pDesc"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_subirproducto2"

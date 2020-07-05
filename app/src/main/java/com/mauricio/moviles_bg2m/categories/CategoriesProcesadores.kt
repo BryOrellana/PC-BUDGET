@@ -36,6 +36,7 @@ class CategoriesProcesadores : Fragment() {
         "-MBIuiieNA0h7yOpnn0o",
         "-MBIv4PV1VO1spcvn6FN"
     )
+    val fReference = "processor"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,7 +79,7 @@ class CategoriesProcesadores : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply{
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products,fReference)
         }
     }
 

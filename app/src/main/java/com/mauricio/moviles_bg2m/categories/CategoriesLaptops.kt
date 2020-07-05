@@ -34,6 +34,7 @@ class CategoriesCompCompleta : Fragment() {
         "-MB76RKvaCyQwoYWEF95",
         "-MB76pYz7Va0AN7MRlQL"
     )
+    val fReferene = "laptops"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,8 +52,8 @@ class CategoriesCompCompleta : Fragment() {
         val service = retrofit.create(ApiService::class.java)
         var productsList : MutableList<Products> = ArrayList()
 
-        mProductsIds.forEach() {
-            service.getProducts(it).enqueue(object : Callback<Products> {
+        mProductsIds.forEach() {code : String ->
+            service.getProducts(code).enqueue(object : Callback<Products> {
                 override fun onResponse(
                     call: Call<Products>?, response: Response<Products>?
                 ) {
@@ -66,7 +67,6 @@ class CategoriesCompCompleta : Fragment() {
                 override fun onFailure(call: Call<Products>, t: Throwable?) {
                     t?.printStackTrace()
                 }
-
             })
         }
         return binding.root
@@ -75,7 +75,7 @@ class CategoriesCompCompleta : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply{
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products, fReferene)
         }
     }
 

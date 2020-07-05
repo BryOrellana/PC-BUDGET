@@ -34,6 +34,7 @@ class CategoriesTarjMadre : Fragment() {
         "-MB74n_VnZLSVkC_qUyt",
         "-MB759J4bgjhAy-G7lUf"
     )
+    val fReference = "motherboard"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,37 +73,12 @@ class CategoriesTarjMadre : Fragment() {
             })
         }
 
-        //navToTarjMadreDesc()
         return binding.root
     }
-
-    private fun showData(products: MutableList<Products>) {
+ private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply{
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products,fReference)
         }
     }
-
-
-    /*private fun navToTarjMadreDesc() {
-        binding.apply {
-            containerProduct1.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.action_categories_Tarj_Madre_to_descriptionTarjMadreFragment)
-            }
-            containerProduct2.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.action_categories_Tarj_Madre_to_descriptionTarjMadreFragment)
-            }
-            containerProduct3.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.action_categories_Tarj_Madre_to_descriptionTarjMadreFragment)
-            }
-            containerProduct4.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.action_categories_Tarj_Madre_to_descriptionTarjMadreFragment)
-            }
-
-        }
-    }*/
 }

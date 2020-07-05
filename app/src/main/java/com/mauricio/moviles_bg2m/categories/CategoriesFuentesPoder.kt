@@ -33,6 +33,7 @@ class CategoriesFuentesPoder : Fragment() {
         "-MBMKuMa-aZtRLRUfheq",
         "-MBML6eo5vvbg51c9vjW"
     )
+    val fReference = "powersource"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -75,7 +76,7 @@ class CategoriesFuentesPoder : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products,fReference)
         }
     }
 

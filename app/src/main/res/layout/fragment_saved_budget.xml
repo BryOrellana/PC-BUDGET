@@ -84,7 +84,7 @@
             app:srcCompat="@drawable/procesador" />
 
         <TextView
-            android:id="@+id/price_cpu"
+            android:id="@+id/price_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"

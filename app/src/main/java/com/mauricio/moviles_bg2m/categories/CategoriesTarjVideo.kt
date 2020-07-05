@@ -1,6 +1,7 @@
 package com.mauricio.moviles_bg2m.categories
 
 import android.os.Bundle
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,7 @@ class CategoriesTarjVideo : Fragment() {
         "-MBJ3nuwclWVnG1TYp_D",
         "-MBJ3wWMO7XeAjWnFa2y"
     )
+    val fReference = "videocard"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +62,8 @@ class CategoriesTarjVideo : Fragment() {
                     val productsData = response?.body()
                     productsList.add(productsData!!)
                     showData(productsList)
-                    //d("products", "GetAllProducts " + productsData)
+
+                    d("products", "GetAllProducts " + productsData)
 
                 }
 
@@ -70,33 +73,13 @@ class CategoriesTarjVideo : Fragment() {
 
             })
         }
-
-        //navToTarjVideoDesc()
         return binding.root
     }
 
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products, fReference)
         }
     }
-
-    /* private fun navToTarjVideoDesc(){
-         binding.apply {
-             containerProduct1.setOnClickListener { view : View ->
-                 view.findNavController().navigate(R.id.action_categories_Tarj_video_to_descriptionTarjVideo)
-             }
-             containerProduct2.setOnClickListener { view : View ->
-                 view.findNavController().navigate(R.id.action_categories_Tarj_video_to_descriptionTarjVideo)
-             }
-             containerProduct3.setOnClickListener { view : View ->
-                 view.findNavController().navigate(R.id.action_categories_Tarj_video_to_descriptionTarjVideo)
-             }
-             containerProduct4.setOnClickListener { view : View ->
-                 view.findNavController().navigate(R.id.action_categories_Tarj_video_to_descriptionTarjVideo)
-             }
-
-         }
-     }*/
 }

@@ -24,11 +24,11 @@ class SavedBudgetFragment : Fragment() {
             DataBindingUtil.inflate(inflater,
                 R.layout.fragment_saved_budget, container, false)
 
-       // navBtnAdd()
+        navBtnAdd()
         return binding.root
     }
 
-    /*private fun navBtnAdd() {
+    private fun navBtnAdd() {
         //algunas cosasaca estan hechas solo para dar idea de como trabajara la aplicacion se mejorara cuando se aplique la funcionalidad
 
         binding.apply {
@@ -77,6 +77,6 @@ class SavedBudgetFragment : Fragment() {
                     .navigate(R.id.action_savedBudgetFragment_to_categories_Gabinetes)
             }
         }
-    }*/
+    }
 
 }

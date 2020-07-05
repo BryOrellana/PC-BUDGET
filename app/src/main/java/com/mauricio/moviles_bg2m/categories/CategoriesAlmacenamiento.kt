@@ -34,7 +34,7 @@ class CategoriesAlmacenamiento : Fragment() {
         "-MBMCKN7FjRYSje5FhQZ",
         "-MBMCYTzaWhCPpvg4PMi"
     )
-    private var coso = 1
+    val fReference = "storage"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,7 +77,7 @@ class CategoriesAlmacenamiento : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products, fReference)
         }
     }
 

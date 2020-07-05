@@ -32,6 +32,7 @@ class CategoriesGabinetes : Fragment() {
         "-MBMHQq0Ox7C_RhqVkZo",
         "-MBMHeHzDVRGcbKWQBQ0"
     )
+    val fReference = "case"
 
 
     override fun onCreateView(
@@ -71,7 +72,7 @@ class CategoriesGabinetes : Fragment() {
     private fun showData(products: MutableList<Products>) {
         recycler_view_laptops.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter(products)
+            adapter = ProductAdapter(products, fReference)
         }
     }
 

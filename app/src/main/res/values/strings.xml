@@ -98,7 +98,7 @@
     <string name="precio_fuente">Precio: $69.94</string>
     <string name="computadora"><![CDATA[Intel Core i7–10750H 2.6GHz, NVIDIA GeForce GTX 1650 Ti 4GB, 8GB DDR4, 240GB SSD, 802.11AC WiFi, Bluetooth 5 & Win 10 Home 64 bit]]></string>
     <string name="precio_compu">Precio: $1199.99</string>
-    <string name="especificaciones">Especificaciones:</string>
+    <string name="descripcion_product">Descripción :</string>
     <string name="especificaciones_txt">– Brand Name: Intel – Series: Xeon E3-1230 - Processor Count: 8 Cores / 16 Threads - Processor: 3.60 GHz up to 5.00 GH - cache: 16 MB Cache - Dimensions: 2.9 x 4.4 x 4.6 inches</string>
     <string name="agregar_txt_btn_product">Agregar</string>
     <string name="ver_en_amazon">Ver en amazon</string>
