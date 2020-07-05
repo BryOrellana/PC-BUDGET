@@ -2,6 +2,7 @@ package com.mauricio.moviles_bg2m.moreFragmentViews
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log.d
 import android.util.Patterns
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -35,7 +36,7 @@ class LoginFragment : Fragment() {
     }
 
     fun updateUI(currentUser: FirebaseUser?) {
-
+        d("USER", currentUser.toString())
     }
 
     override fun onCreateView(
