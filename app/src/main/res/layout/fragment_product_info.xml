@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".moreFragmentViews.DescriptionProductFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProductInfo">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,24 +12,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <Button
-                android:id="@+id/btn_action"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_30dp"
-                android:layout_marginBottom="@dimen/margin_wide"
-                android:background="@drawable/boton_redondo"
-                android:fontFamily="@font/montserrat"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="@string/agregar_txt_btn_product"
-                android:textColor="@color/backgroundWhite"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripcionProduct"
-                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:id="@+id/imgProduct"
@@ -81,10 +63,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_wide"
                 android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/blueColor"
                 android:textSize="@dimen/small_text"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/descripcion_static"
                 app:layout_constraintTop_toBottomOf="@+id/descripcion_static" />
@@ -147,4 +131,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </layout>

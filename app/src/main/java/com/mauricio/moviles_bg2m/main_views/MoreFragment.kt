@@ -3,11 +3,14 @@ package com.mauricio.moviles_bg2m.main_views
 
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -36,8 +39,18 @@ class MoreFragment : Fragment() {
             binding.btnSesion.visibility = View.VISIBLE
             binding.btnCerrar.visibility = View.INVISIBLE
         }
+
         btnListeners()
+        sBtnUploadProduct()
         return binding.root
+    }
+
+    private fun sBtnUploadProduct() {
+        val mUser = FirebaseAuth.getInstance().currentUser
+        d("MUSER", mUser.toString())
+        if ("IEDjD8t6DUPSdDvclRo1mRq79gI3" == mUser?.uid){
+            binding.btnSubirProducto.visibility = View.VISIBLE
+        }
     }
 
     private fun btnListeners() {
@@ -56,6 +69,9 @@ class MoreFragment : Fragment() {
             btnCerrar.setOnClickListener { view : View ->
                 FirebaseAuth.getInstance().signOut()
                 view.findNavController().navigate(R.id.moreFragment)
+                if (binding.btnSubirProducto.isVisible){
+                    binding.btnSubirProducto.visibility = View.GONE
+                }
                 Toast.makeText(context, "Sesión cerrada correctamente",Toast.LENGTH_SHORT).show()
             }
         }

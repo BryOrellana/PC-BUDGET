@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.mauricio.moviles_bg2m.ApiService
-import com.mauricio.moviles_bg2m.Products
-import com.mauricio.moviles_bg2m.R
+import com.mauricio.moviles_bg2m.*
 import com.mauricio.moviles_bg2m.databinding.FragmentProductDescriptionBinding
 import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
@@ -27,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 class DescriptionProductFragment() : Fragment() {
     private lateinit var binding: FragmentProductDescriptionBinding
+    private lateinit var viewModel: observable
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,12 +40,16 @@ class DescriptionProductFragment() : Fragment() {
             R.layout.fragment_product_description, container, false
         )
 
+        viewModel = activity?.run {
+            ViewModelProviders.of(this).get(observable::class.java)
+        } ?: throw Exception("Invalid Fragment")
+
         val retrofit: Retrofit = Retrofit.Builder().baseUrl("https://pc-budget.firebaseio.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val service = retrofit.create(ApiService::class.java)
-        var productsList : MutableList<Products> = ArrayList()
+        var productsList: MutableList<Products> = ArrayList()
         val code = arguments?.getString("product")
 
         service.getProducts(code!!).enqueue(object : Callback<Products> {
@@ -52,14 +59,110 @@ class DescriptionProductFragment() : Fragment() {
                 val productsData = response?.body()
                 productsList.add(productsData!!)
 
-                Picasso.with(context).load(productsList[0].imageUrl).into(binding.imgProductoDesc)
-                binding.priceTxt.text = productsList[0].productPrice
-                binding.nameTxt.text = productsList[0].nameProduct
-                binding.notaTxt.text = productsList[0].productRank
-                binding.descripcionTxt.text = productsList[0].productDesc
+                Picasso.with(context).load(productsList[0].imageUrl).into(binding.imgProduct)
+                //viewModel.image.value = binding.imgProductoDesc
 
-                d("products", "GetAllProducts " + productsData)
+                binding.priceProduct.text = productsList[0].productPrice
+                binding.nameProduct.text = productsList[0].nameProduct
+                binding.rankProduct.text = productsList[0].productRank
+                binding.descripcionProduct.text = productsList[0].productDesc
 
+
+                //d("products", "GetAllProducts " + productsData)
+                binding.btnAction.setOnClickListener { view: View ->
+                    if (productsList[0].productId.substring(0, 1) == "P") {
+                        viewModel.pPrice.value = productsList[0].productPrice
+                        viewModel.pName.value = productsList[0].nameProduct
+                        viewModel.pId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.pImage.value = productsList[0].imageUrl
+                        viewModel.pRank.value = productsList[0].productRank
+                        viewModel.pDesc.value = productsList[0].productDesc
+
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "G") {
+                        viewModel.tgPrice.value = productsList[0].productPrice
+                        viewModel.tgName.value = productsList[0].nameProduct
+                        viewModel.tgId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.tgImage.value = productsList[0].imageUrl
+                        viewModel.tgRank.value = productsList[0].productRank
+                        viewModel.tgDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "R") {
+                        viewModel.rPrice.value = productsList[0].productPrice
+                        viewModel.rName.value = productsList[0].nameProduct
+                        viewModel.rId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.rImage.value = productsList[0].imageUrl
+                        viewModel.rRank.value = productsList[0].productRank
+                        viewModel.rDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "T") {
+                        viewModel.tmPrice.value = productsList[0].productPrice
+                        viewModel.tmName.value = productsList[0].nameProduct
+                        viewModel.tmId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.tmImage.value = productsList[0].imageUrl
+                        viewModel.tmRank.value = productsList[0].productRank
+                        viewModel.tmDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "A") {
+                        viewModel.aPrice.value = productsList[0].productPrice
+                        viewModel.aName.value = productsList[0].nameProduct
+                        viewModel.aId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.aImage.value = productsList[0].imageUrl
+                        viewModel.aRank.value = productsList[0].productRank
+                        viewModel.aDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "F") {
+                        viewModel.fpPrice.value = productsList[0].productPrice
+                        viewModel.fpName.value = productsList[0].nameProduct
+                        viewModel.fpId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.fpImage.value = productsList[0].imageUrl
+                        viewModel.fpRank.value = productsList[0].productRank
+                        viewModel.fpDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    if (productsList[0].productId.substring(0, 1) == "C") {
+                        viewModel.cPrice.value = productsList[0].productPrice
+                        viewModel.cName.value = productsList[0].nameProduct
+                        viewModel.cId.value = productsList[0].productId.substring(0, 1)
+                        viewModel.cImage.value = productsList[0].imageUrl
+                        viewModel.cRank.value = productsList[0].productRank
+                        viewModel.cDesc.value = productsList[0].productDesc
+                        Toast.makeText(
+                            context,
+                            "Producto añadido a tu presupuesto",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             }
 
             override fun onFailure(call: Call<Products>, t: Throwable?) {

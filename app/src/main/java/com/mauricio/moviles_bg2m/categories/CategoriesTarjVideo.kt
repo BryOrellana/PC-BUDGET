@@ -63,7 +63,7 @@ class CategoriesTarjVideo : Fragment() {
                     productsList.add(productsData!!)
                     showData(productsList)
 
-                    d("products", "GetAllProducts " + productsData)
+                    //d("products", "GetAllProducts " + productsData)
 
                 }
 

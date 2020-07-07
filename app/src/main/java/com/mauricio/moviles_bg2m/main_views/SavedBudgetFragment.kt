@@ -29,14 +29,12 @@ class SavedBudgetFragment : Fragment() {
     }
 
     private fun navBtnAdd() {
-        //algunas cosasaca estan hechas solo para dar idea de como trabajara la aplicacion se mejorara cuando se aplique la funcionalidad
-
         binding.apply {
             nameProcesador.setOnClickListener { view: View ->
                 view.findNavController()
                     .navigate(R.id.action_savedBudgetFragment_to_descriptionProductFragment)
             }
-            imgProcessorAdded.setOnClickListener { view: View ->
+            imgProcessorAdd.setOnClickListener { view: View ->
                 view.findNavController()
                     .navigate(R.id.action_savedBudgetFragment_to_descriptionProductFragment)
             }
@@ -50,7 +48,7 @@ class SavedBudgetFragment : Fragment() {
                     .navigate(R.id.action_savedBudgetFragment_to_categories_Memorias)
             }
 
-            txtAddStorage.setOnClickListener { view: View ->
+            txtAddStorageStatic.setOnClickListener { view: View ->
                 view.findNavController()
                     .navigate(R.id.action_savedBudgetFragment_to_categories_almacenamiento)
             }
@@ -59,7 +57,7 @@ class SavedBudgetFragment : Fragment() {
                     .navigate(R.id.action_savedBudgetFragment_to_categories_almacenamiento)
             }
 
-            txtAddPower.setOnClickListener { view: View ->
+            txtAddPowerStatic.setOnClickListener { view: View ->
                 view.findNavController()
                     .navigate(R.id.action_savedBudgetFragment_to_categories_Fuentes_Poder)
             }
@@ -68,7 +66,7 @@ class SavedBudgetFragment : Fragment() {
                     .navigate(R.id.action_savedBudgetFragment_to_categories_Fuentes_Poder)
             }
 
-            txtAddCase.setOnClickListener { view: View ->
+            txtAddCaseStatic.setOnClickListener { view: View ->
                 view.findNavController()
                     .navigate(R.id.action_savedBudgetFragment_to_categories_Gabinetes)
             }

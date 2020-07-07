@@ -12,23 +12,22 @@
 
     <string name="Components_text">Tus Componentes:</string>
     <string name="title_processor">Tu Procesador:</string>
-    <string name="add_processor">Añadir procesador</string>
     <string name="title_graphic_card">Tu tarjeta grafica:</string>
     <string name="agregar_procesador_icono">agregar procesador icono</string>
-    <string name="añadir_procesador"><u>Añadir Procesador</u></string>
+    <string name="añadir_procesador"><u>Presiona el boton para añadir Procesador</u></string>
     <string name="tu_memoria_ram">Tu memoria RAM:</string>
-    <string name="añadir_TG"><u>Añadir tarjeta grafica</u></string>
-    <string name="añadir_ram"><u>Añadir memoria ram</u></string>
-    <string name="añadir_TM"><u>Añadir tarjeta madre</u></string>
+    <string name="añadir_TG"><u>Presiona el boton para añadir tarjeta grafica</u></string>
+    <string name="añadir_ram"><u>Presiona el boton para añadir memoria ram</u></string>
+    <string name="añadir_TM"><u>Presiona el boton para añadir tarjeta madre</u></string>
     <string name="title_MB">Tu tarjeta madre:</string>
     <string name="tu_almacenamiento">Tu almacenamiento:</string>
-    <string name="añadir_almacenamiento"><u>Añadir almacenamiento</u></string>
+    <string name="añadir_almacenamiento"><u>Presiona el boton para añadir almacenamiento</u></string>
     <string name="tu_fuente_de_poder">Tu fuente de poder:</string>
-    <string name="añadir_fuente_de_poder"><u>Añadir fuente de poder</u></string>
+    <string name="añadir_fuente_de_poder"><u>Presiona el boton para añadir fuente de poder</u></string>
     <string name="tu_gabinete">Tu gabinete:</string>
-    <string name="añadir_case"><u>Añadir gabinete</u></string>
-    <string name="total_btn_text">Total</string>
-    <string name="Guardar_boton">Guardar</string>
+    <string name="añadir_case"><u>Presiona el boton para añadir gabinete</u></string>
+    <string name="total_text">Total(US$):</string>
+    <string name="Guardar_boton">Guardar presupuesto</string>
     <string name="laptops">Computadoras Portatiles</string>
     <string name="piezas_txt">"Cotiza las piezas basicas para un PC:"</string>
     <string name="processor">Procesadores</string>
@@ -100,7 +99,7 @@
     <string name="precio_compu">Precio: $1199.99</string>
     <string name="descripcion_product">Descripción :</string>
     <string name="especificaciones_txt">– Brand Name: Intel – Series: Xeon E3-1230 - Processor Count: 8 Cores / 16 Threads - Processor: 3.60 GHz up to 5.00 GH - cache: 16 MB Cache - Dimensions: 2.9 x 4.4 x 4.6 inches</string>
-    <string name="agregar_txt_btn_product">Agregar</string>
+    <string name="agregar_txt_btn_product">Agregar al presupuesto</string>
     <string name="ver_en_amazon">Ver en amazon</string>
     <string name="especificaciones_mother">(Intel X299) LGA 2066, 12 IR3555 Power Stages, DDR4 4266 MHz, Triple M.2, USB 3.2 Gen 2 Type-C, Intel LAN and Aura Sync RGB Lighting</string>
     <string name="name_laptop">Razer Blade 15 Gaming Laptop</string>
@@ -125,4 +124,8 @@
     <string name="product_id">Product id</string>
     <string name="calificacion_txt">Calificación(Max: 5):</string>
     <string name="Product_Image">Product Image</string>
+    <string name="default_total">0.0</string>
+    <string name="borrar_btn">Borrar del presupuesto</string>
+    <string name="AvisoPresupuesto">Da click sobre la imagen de un producto para cambiarlo por otro o da click sobre el nombre de un producto para ver una descripción más detallada.</string>
+    <string name="btn_borrar">Borrar del presupuesto</string>
 </resources>

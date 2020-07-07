@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_budgetFragment_to_categories_Gabinetes"
             app:destination="@id/categories_Gabinetes" />
+        <action
+            android:id="@+id/action_budgetFragment_to_productInfo"
+            app:destination="@id/productInfo" />
     </fragment>
 
     <fragment
@@ -256,6 +259,9 @@
             android:name="pDesc"
             app:argType="string"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_descriptionProductFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
     </fragment>
 
     <fragment
@@ -263,5 +269,10 @@
         android:name="com.mauricio.moviles_bg2m.fragment_subirproducto"
         android:label="Subir Producto"
         tools:layout="@layout/fragment_subirproducto" />
+    <fragment
+        android:id="@+id/productInfo"
+        android:name="com.mauricio.moviles_bg2m.ProductInfo"
+        android:label="fragment_product_info"
+        tools:layout="@layout/fragment_product_info" />
 
 </navigation>
