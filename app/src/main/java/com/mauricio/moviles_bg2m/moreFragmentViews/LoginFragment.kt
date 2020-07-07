@@ -61,10 +61,10 @@ class LoginFragment : Fragment() {
                 if (email.text.toString().isEmpty()) {
                     email.error = "Por favor introduzca su email"
                     email.requestFocus()
-                } /*else if (!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
                     email.error = "Por favor introduzca un email valido"
                     email.requestFocus()
-                }*/ else if (password.text.toString().isEmpty()) {
+                } else if (password.text.toString().isEmpty()) {
                     password.error = "Por favor introduzca una contraseña"
                     password.requestFocus()
                 } else {

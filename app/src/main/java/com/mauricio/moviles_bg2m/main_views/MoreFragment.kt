@@ -1,6 +1,7 @@
 package com.mauricio.moviles_bg2m.main_views
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
@@ -52,6 +53,24 @@ class MoreFragment : Fragment() {
             binding.btnSubirProducto.visibility = View.VISIBLE
         }
     }
+    private fun showWindow(tipo: Int = 0){
+        var text="Facilitar la búsqueda de productos, generando presupuestos a través del mercado real, para satisfacer las necesidades del cliente, conectando con centros de compra externos."
+        var titulo="Objetivo"
+        if(tipo==1) {
+            text = "La aplicación consiste en la búsqueda rápida y satisfactoria de productos tecnológicos, a modo de lograr tener un presupuesto del mercado real acerca de las necesidades de cada persona. Cada persona podrá crear un perfil propio y en este podrá ir almacenando sus presupuestos y a la vez tendrá acceso a tiendas externas a nuestra app en las que podrá encontrar los productos."
+            titulo ="Acerca de"
+        }
+        if(tipo==2){
+            text="Bryan Alexis Orellana Cabrera\n\nMauricio Enrique Palacios Palacios\n\nMiguel Ernesto Rivas Serrano\n\nGabriel Enrique Gonzalez Rodriguez   "
+            titulo="¿Quiene Somos?"
+        }
+        val builder= AlertDialog.Builder(this.context)
+        builder.setTitle(titulo)
+        builder.setMessage(text)
+        builder.setPositiveButton("Aceptar",null)
+        val dialogue: AlertDialog =builder.create()
+        dialogue.show()
+    }
 
     private fun btnListeners() {
         binding.apply {
@@ -73,6 +92,15 @@ class MoreFragment : Fragment() {
                     binding.btnSubirProducto.visibility = View.GONE
                 }
                 Toast.makeText(context, "Sesión cerrada correctamente",Toast.LENGTH_SHORT).show()
+            }
+            objetivosTxt.setOnClickListener {
+                showWindow()
+            }
+            acercaDeTxt.setOnClickListener {
+                showWindow(1)
+            }
+            quienesSomosTxt.setOnClickListener {
+                showWindow(2)
             }
         }
     }

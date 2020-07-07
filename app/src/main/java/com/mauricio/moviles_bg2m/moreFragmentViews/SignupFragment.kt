@@ -59,6 +59,9 @@ class SignupFragment : Fragment() {
             } else if (password.text.toString().isEmpty()) {
                 password.error = "Por favor introduzca una contraseña"
                 password.requestFocus()
+            } else if (password.text.toString().length<6) {
+                password.error = "La contraseña debe de tener como minimo 6 caracteres de largo"
+                password.requestFocus()
             } else if (password.text.toString() != conf_password.text.toString()) {
                 password.error = "Las contraseñas no coinciden"
                 password.requestFocus()
