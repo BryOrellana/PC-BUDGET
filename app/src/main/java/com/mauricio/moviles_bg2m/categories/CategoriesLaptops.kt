@@ -37,6 +37,7 @@ class CategoriesCompCompleta : Fragment() {
     val fReferene = "laptops"
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {

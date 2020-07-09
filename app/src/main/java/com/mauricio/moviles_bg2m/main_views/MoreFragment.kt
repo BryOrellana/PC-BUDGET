@@ -62,7 +62,7 @@ class MoreFragment : Fragment() {
         }
         if(tipo==2){
             text="Bryan Alexis Orellana Cabrera\n\nMauricio Enrique Palacios Palacios\n\nMiguel Ernesto Rivas Serrano\n\nGabriel Enrique Gonzalez Rodriguez   "
-            titulo="¿Quiene Somos?"
+            titulo="¿Quienes Somos?"
         }
         val builder= AlertDialog.Builder(this.context)
         builder.setTitle(titulo)

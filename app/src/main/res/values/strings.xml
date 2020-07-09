@@ -128,4 +128,5 @@
     <string name="borrar_btn">Borrar del presupuesto</string>
     <string name="AvisoPresupuesto">Da click sobre la imagen de un producto para cambiarlo por otro o da click sobre el nombre de un producto para ver una descripción más detallada.</string>
     <string name="btn_borrar">Borrar del presupuesto</string>
+    <string name="ver_articulo_en_amazon">VER ARTICULO EN AMAZON</string>
 </resources>

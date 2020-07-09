@@ -18,18 +18,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_30dp"
-                android:layout_marginBottom="@dimen/margin_wide"
                 android:background="@drawable/boton_redondo"
                 android:fontFamily="@font/montserrat"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="@string/agregar_txt_btn_product"
                 android:textColor="@color/backgroundWhite"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripcionProduct"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/descripcionProduct" />
 
             <ImageView
                 android:id="@+id/imgProduct"
@@ -143,6 +140,25 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/nota_static"
                 app:layout_constraintTop_toTopOf="@+id/nota_static" />
+
+            <Button
+                android:id="@+id/amazon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:background="@drawable/btn_round_orange"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/ver_articulo_en_amazon"
+                android:textColor="@color/backgroundWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_action"
+                app:layout_constraintVertical_bias="0.0"
+                android:visibility="gone"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
