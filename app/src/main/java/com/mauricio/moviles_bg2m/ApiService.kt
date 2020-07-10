@@ -11,4 +11,7 @@ interface ApiService {
     @GET("/products/{id}.json")
     fun getProducts(@Path("id") id: String) : Call<Products>
 
+    @GET("/budgets/{id}.json")
+    fun getBudgets(@Path("id") id: String) : Call<UploadBudget>
+
 }

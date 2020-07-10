@@ -1,20 +1,22 @@
 package com.mauricio.moviles_bg2m.main_views
 
-import android.graphics.Paint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.TextPaint
 import android.util.Log.d
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.google.firebase.database.FirebaseDatabase
 import com.mauricio.moviles_bg2m.ProductDescViewModel
 import com.mauricio.moviles_bg2m.R
+import com.mauricio.moviles_bg2m.UploadBudget
 import com.mauricio.moviles_bg2m.databinding.FragmentBudgetBinding
 import com.mauricio.moviles_bg2m.observable
 import com.squareup.picasso.Picasso
@@ -24,6 +26,24 @@ import java.math.RoundingMode
 class BudgetFragment : Fragment() {
     lateinit var binding: FragmentBudgetBinding
     private lateinit var viewModel: observable
+    private var freeBudgetCard: String = ""
+    private val mBudgetsIds = listOf<String>(
+        "-MBrzw4tCpaV6BLD3tPd",
+        "-MBs-09OJXf89UFgjuXY",
+        "-MBryh6a5kYtNXmLMH5_",
+        "-MBryk6DNnAj9O60L6iX",
+        "-MBs-7_X-hmQt8AXTMzA",
+        "-MBs-9MMDmCBfnLOPOZd",
+        "-MBs-BHLIn7Po3PrGwYO",
+        "-MBs-CvZ8pqBpyVPuKNi",
+        "-MBs-EybhRyJUCij6tyw",
+        "-MBs-H8k_ajSCOd4erG1"
+    )
+
+    private val options = arrayOf<CharSequence>(
+        "Campo 1", "Campo 2", "Campo 3", "Campo 4", "Campo 5",
+        "Campo 6", "Campo 7", "Campo 8", "Campo 9", "Campo 10"
+    )
 
 
     override fun onCreateView(
@@ -39,7 +59,7 @@ class BudgetFragment : Fragment() {
         settersInfo()
         navBtnAdd()
         navToProductDesc()
-
+        btnSaveBudget()
         return binding.root
     }
 
@@ -56,6 +76,7 @@ class BudgetFragment : Fragment() {
             ViewModelProviders.of(this).get(observable::class.java)
         } ?: throw Exception("Invalid Activity")
         viewModel.pName.observe(viewLifecycleOwner, Observer {
+
             if (viewModel.pId.value == "P") {
                 binding.apply {
                     priceStatic.visibility = View.VISIBLE
@@ -209,8 +230,6 @@ class BudgetFragment : Fragment() {
         } ?: throw Exception("Invalid Activity")
 
         binding.apply {
-
-
             txtAddProcessorStatic.setOnClickListener { view: View ->
                 if (txtAddProcessorStatic.text.toString() != "Presiona el boton para añadir Procesador") {
                     productToDescViewModel.pdName.value = viewModel.pName.value
@@ -281,6 +300,123 @@ class BudgetFragment : Fragment() {
                     view.findNavController().navigate(R.id.action_budgetFragment_to_productInfo)
                 }
             }
+        }
+    }
+
+    private fun btnSaveBudget() {
+        var usedSpaceBudget = "false"
+        val mBudgets: MutableList<UploadBudget> = ArrayList()
+
+        binding.saveButton.setOnClickListener {
+            var bDialog: AlertDialog
+            val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+
+            builder.setTitle("Elige una opcion para guardar o sobreescribir un presupuesto")
+            builder.setSingleChoiceItems(
+                options, -1
+            ) { dialog, item ->
+                when (item) {
+                    0 -> {
+                        freeBudgetCard = mBudgetsIds[0]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    1 -> {
+                        freeBudgetCard = mBudgetsIds[1]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    2 -> {
+                        freeBudgetCard = mBudgetsIds[2]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    3 -> {
+                        freeBudgetCard = mBudgetsIds[3]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    4 -> {
+                        freeBudgetCard = mBudgetsIds[4]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    5 -> {
+                        freeBudgetCard = mBudgetsIds[5]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    6 -> {
+                        freeBudgetCard = mBudgetsIds[6]
+                        //d("URLAPI", freeBudgetCard)
+                    }
+                    7 -> {
+                        freeBudgetCard = mBudgetsIds[7]
+                        // d("URLAPI", freeBudgetCard)
+                    }
+                    8 -> {
+                        freeBudgetCard = mBudgetsIds[8]
+                        // d("URLAPI", freeBudgetCard)
+                    }
+                    9 -> {
+                        freeBudgetCard = mBudgetsIds[9]
+                        // d("URLAPI", freeBudgetCard)
+                    }
+                }
+            }
+
+            builder.setPositiveButton("Listo") { dialog, which ->
+                val budget = UploadBudget(
+                    binding.etNameBudget.text.toString().trim(),
+                    binding.etDescBudget.text.toString().trim(),
+                    viewModel.totalP.value.toString()?.trim(),
+
+                    viewModel.pId.value?.trim() ?: "",
+                    viewModel.pImage.value?.trim() ?: "",
+                    viewModel.pName.value?.trim() ?: "",
+                    viewModel.pPrice.value?.trim() ?: "",
+
+                    viewModel.tgId.value?.trim() ?: "",
+                    viewModel.tgImage.value?.trim() ?: "",
+                    viewModel.tgName.value?.trim() ?: "",
+                    viewModel.tgPrice.value?.trim() ?: "",
+
+                    viewModel.rId.value?.trim() ?: "",
+                    viewModel.rImage.value?.trim() ?: "",
+                    viewModel.rName.value?.trim() ?: "",
+                    viewModel.rPrice.value?.trim() ?: "",
+
+                    viewModel.tmId.value?.trim() ?: "",
+                    viewModel.tmImage.value?.trim() ?: "",
+                    viewModel.tmName.value?.trim() ?: "",
+                    viewModel.tmPrice.value?.trim() ?: "",
+
+                    viewModel.aId.value?.trim() ?: "",
+                    viewModel.aImage.value?.trim() ?: "",
+                    viewModel.aName.value?.trim() ?: "",
+                    viewModel.aPrice.value?.trim() ?: "",
+
+                    viewModel.fpId.value?.trim() ?: "",
+                    viewModel.fpImage.value?.trim() ?: "",
+                    viewModel.fpName.value?.trim() ?: "",
+                    viewModel.fpPrice.value?.trim() ?: "",
+
+                    viewModel.cId.value?.trim() ?: "",
+                    viewModel.cImage.value?.trim() ?: "",
+                    viewModel.cName.value?.trim() ?: "",
+                    viewModel.cPrice.value?.trim() ?: ""
+                )
+
+                val mDatabaseRef = FirebaseDatabase.getInstance().getReference("budgets")
+                //val budgetId = mDatabaseRef.push().key
+
+                mDatabaseRef.child(freeBudgetCard).setValue(budget).addOnCompleteListener {
+                    Toast.makeText(
+                        context,
+                        "Presupuesto guardado correctamente! :D.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            }
+            builder.setNegativeButton("Cancelar"){dialog, which -> Toast.makeText(context, "Guardado cancelado correctamente!",Toast.LENGTH_SHORT).show()}
+
+            bDialog = builder.create()
+            bDialog.show()
         }
     }
 }

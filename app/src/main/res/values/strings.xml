@@ -76,8 +76,7 @@
     <string name="confirmar_contrasena">Confirmar Contraseña</string>
     <string name="confirme_su_correo_electronico">Confirme su correo electronico</string>
     <string name="crear_cuenta">Crear cuenta</string>
-    <string name="componentes_juntos">Esta sera una descripcion del usuario. Esta sera una descripcion del usuario. Esta sera una descripcion del usuario.
-    Esta sera una descripcion del usuario. </string>
+    <string name="componentes_juntos">Descripción del producto</string>
     <string name="precio">Precio(US$):</string>
     <string name="titleBudget">titulo</string>
     <string name="titletxt_product_processor">Intel Xeon E3-1230 Desktop Processor 8 Cores up to 5.0 GHz Turbo unlocked LGA1151 300</string>
@@ -116,8 +115,7 @@
     <string name="precio_de_producto">Precio de producto</string>
     <string name="nombre_de_producto">Nombre de producto</string>
     <string name="descripcion">Descripcion</string>
-    <string name="computadora_gaming_1">COMPUTADORA GAMING 1</string>
-    <string name="computadora_gaming_2">COMPUTADORA GAMING 2</string>
+    <string name="computadora_gaming_1">Nombre de presupuesto</string>
     <string name="precio_72_99">Precio: $72.99</string>
     <string name="calificacion">calificacion</string>
     <string name="selected_image">Selected image</string>
@@ -128,4 +126,6 @@
     <string name="borrar_btn">Borrar del presupuesto</string>
     <string name="AvisoPresupuesto">Da click sobre la imagen de un producto para cambiarlo por otro o da click sobre el nombre de un producto para ver una descripción más detallada.</string>
     <string name="btn_borrar">Borrar del presupuesto</string>
+    <string name="nombre_de_tu_presupuesto">Nombre de tu presupuesto:</string>
+    <string name="desc_budget">Descripcion de tu presupuesto:</string>
 </resources>

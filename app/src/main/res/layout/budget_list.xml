@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/backgroundWhite">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/presu1card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp">
+
+        <TextView
+            android:id="@+id/tituloPresupuesto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/computadora_gaming_1"
+            android:textAlignment="center"
+            android:textColor="@color/blueColor"
+            android:textSize="@dimen/textSize_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/TitulosSize"
+            app:civ_border_color="@color/blueColor"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toStartOf="@+id/img2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/precioPresupuesto1" />
+
+        <TextView
+            android:id="@+id/precioPresupuesto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/precio"
+            android:textColor="@color/redColor"
+            android:textSize="@dimen/small_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloPresupuesto1" />
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginEnd="@dimen/margin_88dp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/redColor"
+            android:textSize="@dimen/small_text"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/precioPresupuesto1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/precioPresupuesto1"
+            app:layout_constraintTop_toTopOf="@+id/precioPresupuesto1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/TitulosSize"
+            app:civ_border_color="@color/blueColor"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toStartOf="@+id/img3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img1"
+            app:layout_constraintTop_toBottomOf="@+id/precioPresupuesto1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/TitulosSize"
+            app:civ_border_color="@color/blueColor"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toStartOf="@+id/img4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img2"
+            app:layout_constraintTop_toBottomOf="@+id/precioPresupuesto1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/TitulosSize"
+            app:civ_border_color="@color/blueColor"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img3"
+            app:layout_constraintTop_toBottomOf="@+id/precioPresupuesto1" />
+
+        <TextView
+            android:id="@+id/descPresupuesto1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/TitulosSize"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/componentes_juntos"
+            android:textAlignment="center"
+            android:textColor="@color/blueColor"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintBottom_toTopOf="@+id/separador4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img2" />
+
+        <View
+            android:id="@+id/separador4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginEnd="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:background="@color/blueColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="NotSibling" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

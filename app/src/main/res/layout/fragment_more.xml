@@ -188,17 +188,19 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/telefonoTxt"
                 app:layout_constraintTop_toBottomOf="@+id/telefonoTxt" />
+
             <TextView
                 android:id="@+id/facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
                 android:layout_marginTop="76dp"
                 android:text="PC-BUDGET(BG2M)"
+                android:textIsSelectable="true"
                 android:textSize="@dimen/small_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textIsSelectable="true"
-                app:layout_constraintHorizontal_bias="0.446"
-                app:layout_constraintStart_toStartOf="@+id/telefonoTxt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Facebook"
                 app:layout_constraintTop_toBottomOf="@+id/telefonoTxt" />
             <TextView
                 android:id="@+id/Facebook"

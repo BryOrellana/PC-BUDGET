@@ -1,5 +1,7 @@
 package com.mauricio.moviles_bg2m.moreFragmentViews
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log.d
 import androidx.fragment.app.Fragment
@@ -10,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -66,7 +69,6 @@ class DescriptionProductFragment() : Fragment() {
                 binding.nameProduct.text = productsList[0].nameProduct
                 binding.rankProduct.text = productsList[0].productRank
                 binding.descripcionProduct.text = productsList[0].productDesc
-
 
                 //d("products", "GetAllProducts " + productsData)
                 binding.btnAction.setOnClickListener { view: View ->
@@ -169,7 +171,6 @@ class DescriptionProductFragment() : Fragment() {
                 t?.printStackTrace()
             }
         })
-
         return binding.root
     }
 

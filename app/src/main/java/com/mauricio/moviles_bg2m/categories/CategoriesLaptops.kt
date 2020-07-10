@@ -6,6 +6,8 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import com.mauricio.moviles_bg2m.ApiService
 import com.mauricio.moviles_bg2m.ProductAdapter
 import com.mauricio.moviles_bg2m.Products

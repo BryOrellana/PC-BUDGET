@@ -11,34 +11,71 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.budget_list.view.*
 import kotlinx.android.synthetic.main.product_list.view.*
 
-class ProductAdapter(
-    private val products: MutableList<Products>,
-    private val fReference: String) :
-    RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class BudgetAdapter(private val budgets: MutableList<UploadBudget>) : RecyclerView.Adapter<BudgetAdapter.ViewHolder>() {
+
     private lateinit var context: Context
-    private lateinit var args: Bundle
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_list, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.budget_list, parent, false)
         context = view.context
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = products.size
+    override fun getItemCount(): Int = budgets.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val product = products[position]
+        val budget = budgets[position]
 
-        Picasso.with(context).load(product.imageUrl).into(holder.pImage)
-        holder.pName.text = product.nameProduct
-        holder.pRank.text = product.productRank
-        holder.pPrice.text = product.productPrice
 
-        holder.itemView.setOnClickListener { view: View ->
+        if(budget.bname == ""){
+            Picasso.with(context).load(R.drawable.ic_processor).placeholder(R.drawable.ic_processor).into(holder.bImg1)
+            Picasso.with(context).load(R.drawable.ic_cpu).placeholder(R.drawable.ic_cpu).into(holder.bImg2)
+            Picasso.with(context).load(R.drawable.ic_ram).placeholder(R.drawable.ic_ram).into(holder.bImg3)
+            Picasso.with(context).load(R.drawable.ic_motherboard).placeholder(R.drawable.ic_motherboard).into(holder.bImg4)
+            holder.bName.text = "Nombre de presupuesto"
+            holder.bPrice.text = "0.0"
+            holder.bdesc.text = "Agrega una pequeña descripción para tu presupuesto!"
+
+        }
+        else{
+            if(budget.pimage == ""){
+                Picasso.with(context).load(R.drawable.ic_processor).placeholder(R.drawable.ic_processor).into(holder.bImg1)
+            }else{
+                Picasso.with(context).load(budget.pimage).into(holder.bImg1)
+            }
+            if(budget.tgImage == ""){
+                Picasso.with(context).load(R.drawable.ic_cpu).placeholder(R.drawable.ic_cpu).into(holder.bImg2)
+            }else{
+                Picasso.with(context).load(budget.tgImage).into(holder.bImg2)
+            }
+            if(budget.rimage == ""){
+                Picasso.with(context).load(R.drawable.ic_ram).placeholder(R.drawable.ic_ram).into(holder.bImg3)
+            }else{
+                Picasso.with(context).load(budget.rimage).into(holder.bImg3)
+            }
+            if(budget.tmImage == ""){
+                Picasso.with(context).load(R.drawable.ic_motherboard).placeholder(R.drawable.ic_motherboard).into(holder.bImg4)
+            }else{
+                Picasso.with(context).load(budget.tmImage).into(holder.bImg4)
+            }
+
+            holder.bName.text = budget.bname
+
+            if(budget.totalP == "null"){
+                holder.bPrice.text = "0.0"
+            }else{
+                holder.bPrice.text = budget.totalP
+            }
+
+            holder.bdesc.text = budget.budgetDesc
+        }
+        /*holder.itemView.setOnClickListener { view: View ->
             when {
                 fReference == "laptops" -> {
                     args = bundleOf("product" to products.get(position).code)
@@ -105,14 +142,20 @@ class ProductAdapter(
                         )
                 }
             }
-        }
+        }*/
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val pImage: ImageView = itemView.image_view_product
-        val pName: TextView = itemView.name_product
-        val pRank: TextView = itemView.text_view_product_nota
-        val pPrice: TextView = itemView.text_view_product_precio
+        //val pImage: ImageView = itemView.image_view_product
+        val bName: TextView = itemView.tituloPresupuesto1
+        val bPrice: TextView = itemView.totalPrice
+        val bdesc: TextView = itemView.descPresupuesto1
+
+        val bImg1: CircleImageView = itemView.img1
+        val bImg2: CircleImageView = itemView.img2
+        val bImg3: CircleImageView = itemView.img3
+        val bImg4: CircleImageView = itemView.img4
     }
+
 
 }

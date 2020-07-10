@@ -1,5 +1,6 @@
 package com.mauricio.moviles_bg2m.categories
 
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log.d
 import androidx.fragment.app.Fragment

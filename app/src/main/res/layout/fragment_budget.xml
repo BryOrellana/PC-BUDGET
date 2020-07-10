@@ -13,6 +13,37 @@
             android:layout_height="wrap_content"
             android:background="@color/backgroundWhite">
 
+            <EditText
+                android:id="@+id/et_nameBudget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:backgroundTint="@color/greenColor"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/nombre_de_tu_presupuesto"
+                android:importantForAutofill="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nameBudget"
+                app:layout_constraintTop_toBottomOf="@+id/nameBudget"
+                tools:targetApi="lollipop" />
+
+            <EditText
+                android:id="@+id/et_descBudget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:backgroundTint="@color/greenColor"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/desc_budget"
+                android:importantForAutofill="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/et_nameBudget"
+                app:layout_constraintTop_toBottomOf="@+id/descBudget"
+                tools:targetApi="lollipop" />
 
             <TextView
                 android:id="@+id/title_components"
@@ -27,6 +58,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+            <!--Procesador-->
             <View
                 android:id="@+id/separador"
                 android:layout_width="match_parent"
@@ -37,10 +70,20 @@
                 android:background="@color/blueColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_descBudget" />
+
+            <View
+                android:id="@+id/separador6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@color/blueColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/changeProductWarning" />
 
-
-            <!--Procesador-->
             <TextView
                 android:id="@+id/processor"
                 android:layout_width="wrap_content"
@@ -683,6 +726,28 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title_components" />
+
+            <TextView
+                android:id="@+id/nameBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/nombre_de_producto"
+                android:textColor="@color/blueColor"
+                app:layout_constraintStart_toStartOf="@+id/img_processor_add"
+                app:layout_constraintTop_toBottomOf="@+id/separador6" />
+
+            <TextView
+                android:id="@+id/descBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/desc_budget"
+                android:textColor="@color/blueColor"
+                app:layout_constraintStart_toStartOf="@+id/et_nameBudget"
+                app:layout_constraintTop_toBottomOf="@+id/et_nameBudget" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
