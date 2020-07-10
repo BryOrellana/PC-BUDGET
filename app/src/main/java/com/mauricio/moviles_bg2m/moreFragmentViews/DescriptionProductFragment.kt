@@ -26,6 +26,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.net.URL
 
 /**
  * A simple [Fragment] subclass.
@@ -55,21 +56,28 @@ class DescriptionProductFragment() : Fragment() {
         var productsList: MutableList<Products> = ArrayList()
         val code = arguments?.getString("product")
 
+
+
         service.getProducts(code!!).enqueue(object : Callback<Products> {
             override fun onResponse(
                 call: Call<Products>?, response: Response<Products>?
             ) {
                 val productsData = response?.body()
                 productsList.add(productsData!!)
+                var url = productsList[0]!!.URL
 
                 Picasso.with(context).load(productsList[0].imageUrl).into(binding.imgProduct)
                 //viewModel.image.value = binding.imgProductoDesc
+
 
                 binding.priceProduct.text = productsList[0].productPrice
                 binding.nameProduct.text = productsList[0].nameProduct
                 binding.rankProduct.text = productsList[0].productRank
                 binding.descripcionProduct.text = productsList[0].productDesc
-
+                if (productsList[0].productId.substring(0, 1) == "L") {
+                    binding.btnAction.visibility = View.GONE
+                    binding.amazon.visibility = View.VISIBLE
+                    }
                 //d("products", "GetAllProducts " + productsData)
                 binding.btnAction.setOnClickListener { view: View ->
                     if (productsList[0].productId.substring(0, 1) == "P") {
@@ -165,12 +173,30 @@ class DescriptionProductFragment() : Fragment() {
                         ).show()
                     }
                 }
+
             }
 
             override fun onFailure(call: Call<Products>, t: Throwable?) {
                 t?.printStackTrace()
             }
         })
+
+
+        binding.amazon.setOnClickListener { view: View ->
+            if (productsList[0].productId.substring(0, 1) == "L") {
+
+
+                val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productsList[0].URL.toString()))
+                startActivity(webIntent)
+                Toast.makeText(
+                    context,
+                    "Abriendo...",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+
+            }
         return binding.root
     }
 

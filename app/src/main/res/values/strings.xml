@@ -128,4 +128,5 @@
     <string name="btn_borrar">Borrar del presupuesto</string>
     <string name="nombre_de_tu_presupuesto">Nombre de tu presupuesto:</string>
     <string name="desc_budget">Descripcion de tu presupuesto:</string>
+    <string name="ver_articulo_en_amazon">VER ARTICULO EN AMAZON</string>
 </resources>

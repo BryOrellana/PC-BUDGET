@@ -9,5 +9,6 @@ data class Products (
     var productId: String,
     var productPrice: String,
     var productRank: String,
-    var code : String
+    var code : String,
+    var URL : String
 )
