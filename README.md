@@ -25,3 +25,14 @@ Además de conocimientos de programación, necesitarás un ordenador con las sig
 9. ¡Ya puedes comenzar a trabajar en tu aplicación!
 
 ## :wrench: desarrollo de ejecucion :wrench:
+
+## :computer: Construido con :computer:
+
+## :black_nib: Autores :black_nib: 
+* Bryan Alexis Orellana Cabrera.
+* Gabriel Enrique Gonzales Rodriguez.
+* Mauricio Enrique Palacios Palacios.
+* Miguel Ernesto Rivas Serrano.
+
+## :gift: AGRADECIMIENTOS :gift:
+EL agradecimiento de este proyecto va dirigido primero a Dios ya que sin la bendicion y su amor todo hubiera sido total fracaso, tambien para nuestro docente Nestor Aldana que gracias a su conocimiento y ayuda pudimos avanzar mucho ,  los instructores por brindarnos de su tiempo para solventar dudas sobre todo Douglas Hernandez . 
