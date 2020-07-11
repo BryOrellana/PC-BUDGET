@@ -27,6 +27,20 @@ Además de conocimientos de programación, necesitarás un ordenador con las sig
 ## :wrench: desarrollo de ejecucion :wrench:
 
 ## :computer: Construido con :computer:
+* :fire: Fire base :fire:
+* :recycle: complementos : :recycle: 
+- databinding
+ - firebase
+- lifecycle
+- picasso
+- navigation 
+ - retrofit
+- shadowimageview
+- circleimageview
+
+##  :construction_worker: Usuarios de prueba :construction_worker:
+* Admin  admin@admin.com
+* usuario usuario1@usuario1.com
 
 ## :black_nib: Autores :black_nib: 
 * Bryan Alexis Orellana Cabrera.
