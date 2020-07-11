@@ -3,6 +3,9 @@ package com.mauricio.moviles_bg2m.main_views
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.os.Handler
+import android.text.style.UpdateAppearance
+import android.util.Log
 import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
@@ -13,19 +16,24 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.mauricio.moviles_bg2m.ProductDescViewModel
-import com.mauricio.moviles_bg2m.R
-import com.mauricio.moviles_bg2m.UploadBudget
+import com.mauricio.moviles_bg2m.*
 import com.mauricio.moviles_bg2m.databinding.FragmentBudgetBinding
-import com.mauricio.moviles_bg2m.observable
 import com.squareup.picasso.Picasso
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.math.BigDecimal
 import java.math.RoundingMode
+import kotlin.math.log
 
 class BudgetFragment : Fragment() {
     lateinit var binding: FragmentBudgetBinding
     private lateinit var viewModel: observable
+    private val user = FirebaseAuth.getInstance().currentUser
     private var freeBudgetCard: String = ""
     private val mBudgetsIds = listOf<String>(
         "-MBrzw4tCpaV6BLD3tPd",
@@ -40,12 +48,6 @@ class BudgetFragment : Fragment() {
         "-MBs-H8k_ajSCOd4erG1"
     )
 
-    private val options = arrayOf<CharSequence>(
-        "Campo 1", "Campo 2", "Campo 3", "Campo 4", "Campo 5",
-        "Campo 6", "Campo 7", "Campo 8", "Campo 9", "Campo 10"
-    )
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +56,6 @@ class BudgetFragment : Fragment() {
             inflater,
             R.layout.fragment_budget, container, false
         )
-
 
         settersInfo()
         navBtnAdd()
@@ -304,119 +305,151 @@ class BudgetFragment : Fragment() {
     }
 
     private fun btnSaveBudget() {
-        var usedSpaceBudget = "false"
-        val mBudgets: MutableList<UploadBudget> = ArrayList()
+        var options = arrayOf<CharSequence>()
+        if (user != null) {
+             options = arrayOf<CharSequence>(
+                "Campo 1", "Campo 2", "Campo 3", "Campo 4", "Campo 5",
+                "Campo 6", "Campo 7", "Campo 8", "Campo 9", "Campo 10"
+            )
+        } else {
+             options = arrayOf<CharSequence>(
+                "Campo 1", "Campo 2"
+            )
+        }
+
 
         binding.saveButton.setOnClickListener {
             var bDialog: AlertDialog
             val builder: AlertDialog.Builder = AlertDialog.Builder(context)
 
-            builder.setTitle("Elige una opcion para guardar o sobreescribir un presupuesto")
-            builder.setSingleChoiceItems(
-                options, -1
-            ) { dialog, item ->
-                when (item) {
-                    0 -> {
-                        freeBudgetCard = mBudgetsIds[0]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    1 -> {
-                        freeBudgetCard = mBudgetsIds[1]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    2 -> {
-                        freeBudgetCard = mBudgetsIds[2]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    3 -> {
-                        freeBudgetCard = mBudgetsIds[3]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    4 -> {
-                        freeBudgetCard = mBudgetsIds[4]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    5 -> {
-                        freeBudgetCard = mBudgetsIds[5]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    6 -> {
-                        freeBudgetCard = mBudgetsIds[6]
-                        //d("URLAPI", freeBudgetCard)
-                    }
-                    7 -> {
-                        freeBudgetCard = mBudgetsIds[7]
-                        // d("URLAPI", freeBudgetCard)
-                    }
-                    8 -> {
-                        freeBudgetCard = mBudgetsIds[8]
-                        // d("URLAPI", freeBudgetCard)
-                    }
-                    9 -> {
-                        freeBudgetCard = mBudgetsIds[9]
-                        // d("URLAPI", freeBudgetCard)
-                    }
-                }
+            if(user == null){
+                Toast.makeText(context,"Inicia sesión o crea una cuenta para poder usar todos los campos de presupuesto!",Toast.LENGTH_SHORT).show()
             }
 
-            builder.setPositiveButton("Listo") { dialog, which ->
-                val budget = UploadBudget(
-                    binding.etNameBudget.text.toString().trim(),
-                    binding.etDescBudget.text.toString().trim(),
-                    viewModel.totalP.value.toString()?.trim(),
-
-                    viewModel.pId.value?.trim() ?: "",
-                    viewModel.pImage.value?.trim() ?: "",
-                    viewModel.pName.value?.trim() ?: "",
-                    viewModel.pPrice.value?.trim() ?: "",
-
-                    viewModel.tgId.value?.trim() ?: "",
-                    viewModel.tgImage.value?.trim() ?: "",
-                    viewModel.tgName.value?.trim() ?: "",
-                    viewModel.tgPrice.value?.trim() ?: "",
-
-                    viewModel.rId.value?.trim() ?: "",
-                    viewModel.rImage.value?.trim() ?: "",
-                    viewModel.rName.value?.trim() ?: "",
-                    viewModel.rPrice.value?.trim() ?: "",
-
-                    viewModel.tmId.value?.trim() ?: "",
-                    viewModel.tmImage.value?.trim() ?: "",
-                    viewModel.tmName.value?.trim() ?: "",
-                    viewModel.tmPrice.value?.trim() ?: "",
-
-                    viewModel.aId.value?.trim() ?: "",
-                    viewModel.aImage.value?.trim() ?: "",
-                    viewModel.aName.value?.trim() ?: "",
-                    viewModel.aPrice.value?.trim() ?: "",
-
-                    viewModel.fpId.value?.trim() ?: "",
-                    viewModel.fpImage.value?.trim() ?: "",
-                    viewModel.fpName.value?.trim() ?: "",
-                    viewModel.fpPrice.value?.trim() ?: "",
-
-                    viewModel.cId.value?.trim() ?: "",
-                    viewModel.cImage.value?.trim() ?: "",
-                    viewModel.cName.value?.trim() ?: "",
-                    viewModel.cPrice.value?.trim() ?: ""
-                )
-
-                val mDatabaseRef = FirebaseDatabase.getInstance().getReference("budgets")
-                //val budgetId = mDatabaseRef.push().key
-
-                mDatabaseRef.child(freeBudgetCard).setValue(budget).addOnCompleteListener {
-                    Toast.makeText(
-                        context,
-                        "Presupuesto guardado correctamente! :D.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+            if (binding.etNameBudget.text.isEmpty() || binding.etDescBudget.text.isEmpty()) {
+                Toast.makeText(
+                    context,
+                    "Por favor, ingresa un nombre y descripción para tu presupuesto",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                builder.setTitle("Elige una opcion para guardar o sobreescribir un presupuesto")
+                builder.setSingleChoiceItems(
+                    options, -1
+                ) { dialog, item ->
+                    when (item) {
+                        0 -> {
+                            freeBudgetCard = mBudgetsIds[0]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        1 -> {
+                            freeBudgetCard = mBudgetsIds[1]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        2 -> {
+                            freeBudgetCard = mBudgetsIds[2]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        3 -> {
+                            freeBudgetCard = mBudgetsIds[3]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        4 -> {
+                            freeBudgetCard = mBudgetsIds[4]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        5 -> {
+                            freeBudgetCard = mBudgetsIds[5]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        6 -> {
+                            freeBudgetCard = mBudgetsIds[6]
+                            //d("URLAPI", freeBudgetCard)
+                        }
+                        7 -> {
+                            freeBudgetCard = mBudgetsIds[7]
+                            // d("URLAPI", freeBudgetCard)
+                        }
+                        8 -> {
+                            freeBudgetCard = mBudgetsIds[8]
+                            // d("URLAPI", freeBudgetCard)
+                        }
+                        9 -> {
+                            freeBudgetCard = mBudgetsIds[9]
+                            // d("URLAPI", freeBudgetCard)
+                        }
+                    }
                 }
+                builder.setPositiveButton("Listo") { dialog, which ->
+                    val budget = UploadBudget(
+                        freeBudgetCard.trim(),
+                        binding.etNameBudget.text.toString().trim(),
+                        binding.etDescBudget.text.toString().trim(),
+                        viewModel.totalP.value.toString()?.trim(),
 
+                        viewModel.pId.value?.trim() ?: "",
+                        viewModel.pImage.value?.trim() ?: "",
+                        viewModel.pName.value?.trim() ?: "",
+                        viewModel.pPrice.value?.trim() ?: "",
+
+                        viewModel.tgId.value?.trim() ?: "",
+                        viewModel.tgImage.value?.trim() ?: "",
+                        viewModel.tgName.value?.trim() ?: "",
+                        viewModel.tgPrice.value?.trim() ?: "",
+
+                        viewModel.rId.value?.trim() ?: "",
+                        viewModel.rImage.value?.trim() ?: "",
+                        viewModel.rName.value?.trim() ?: "",
+                        viewModel.rPrice.value?.trim() ?: "",
+
+                        viewModel.tmId.value?.trim() ?: "",
+                        viewModel.tmImage.value?.trim() ?: "",
+                        viewModel.tmName.value?.trim() ?: "",
+                        viewModel.tmPrice.value?.trim() ?: "",
+
+                        viewModel.aId.value?.trim() ?: "",
+                        viewModel.aImage.value?.trim() ?: "",
+                        viewModel.aName.value?.trim() ?: "",
+                        viewModel.aPrice.value?.trim() ?: "",
+
+                        viewModel.fpId.value?.trim() ?: "",
+                        viewModel.fpImage.value?.trim() ?: "",
+                        viewModel.fpName.value?.trim() ?: "",
+                        viewModel.fpPrice.value?.trim() ?: "",
+
+                        viewModel.cId.value?.trim() ?: "",
+                        viewModel.cImage.value?.trim() ?: "",
+                        viewModel.cName.value?.trim() ?: "",
+                        viewModel.cPrice.value?.trim() ?: ""
+                    )
+
+                    val mDatabaseRef =
+                        FirebaseDatabase.getInstance().getReference("budgets")
+                    //val budgetId = mDatabaseRef.push().key
+
+                    mDatabaseRef.child(freeBudgetCard).setValue(budget)
+                        .addOnCompleteListener {
+                            Toast.makeText(
+                                context,
+                                "Presupuesto guardado correctamente! :D.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+
+                            Handler().postDelayed({
+                                view!!.findNavController()!!
+                                    .navigate(R.id.action_budgetFragment_to_homeFragment)
+                                activity?.viewModelStore?.clear()
+                            }, 800)
+                        }
+                }
+                bDialog = builder.create()
+                bDialog.show()
+
+                builder.setNegativeButton("Cancelar") { dialog, which ->
+                    Toast.makeText(context, "Cancelado.", Toast.LENGTH_SHORT).show()
+                }
             }
-            builder.setNegativeButton("Cancelar"){dialog, which -> Toast.makeText(context, "Guardado cancelado correctamente!",Toast.LENGTH_SHORT).show()}
-
-            bDialog = builder.create()
-            bDialog.show()
         }
     }
 }

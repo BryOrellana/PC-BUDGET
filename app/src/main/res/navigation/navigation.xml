@@ -65,6 +65,18 @@
         <action
             android:id="@+id/action_budgetFragment_to_productInfo"
             app:destination="@id/productInfo" />
+        <action
+            android:id="@+id/action_budgetFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="bid"
+            app:argType="string"
+            android:defaultValue='"null"' />
+        <argument
+            android:name="dynamicTitle"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Presupuesto" />
     </fragment>
 
     <fragment
@@ -121,6 +133,9 @@
         <action
             android:id="@+id/action_homeFragment_to_savedBudgetFragment"
             app:destination="@id/savedBudgetFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
     </fragment>
 
     <fragment
@@ -135,7 +150,7 @@
     <fragment
         android:id="@+id/categories_Tarj_video"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesTarjVideo"
-        android:label="Tarjetas de video" >
+        android:label="Tarjetas de video">
         <action
             android:id="@+id/action_categories_Tarj_video_to_descriptionProductFragment"
             app:destination="@id/descriptionProductFragment" />
@@ -171,7 +186,7 @@
     <fragment
         android:id="@+id/categories_Gabinetes"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesGabinetes"
-        android:label="Gabinetes" >
+        android:label="Gabinetes">
         <action
             android:id="@+id/action_categories_Gabinetes_to_descriptionProductFragment"
             app:destination="@id/descriptionProductFragment" />
@@ -180,7 +195,7 @@
     <fragment
         android:id="@+id/categories_Fuentes_Poder"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesFuentesPoder"
-        android:label="Fuentes de poder" >
+        android:label="Fuentes de poder">
         <action
             android:id="@+id/action_categories_Fuentes_Poder_to_descriptionProductFragment"
             app:destination="@id/descriptionProductFragment" />
@@ -192,9 +207,6 @@
         android:name="com.mauricio.moviles_bg2m.main_views.SavedBudgetFragment"
         android:label="{dynamicTitle}"
         tools:layout="@layout/fragment_saved_budget">
-        <argument
-            android:name="dynamicTitle"
-            app:argType="string" />
         <action
             android:id="@+id/action_savedBudgetFragment_to_categories_Fuentes_Poder"
             app:destination="@id/categories_Fuentes_Poder" />
@@ -210,13 +222,34 @@
         <action
             android:id="@+id/action_savedBudgetFragment_to_categories_Memorias"
             app:destination="@id/categories_Memorias" />
+        <argument
+            android:name="bid"
+            app:argType="string" />
+        <argument
+            android:name="dynamicTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Tarj_Madre"
+            app:destination="@id/categories_Tarj_Madre" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Tarj_video"
+            app:destination="@id/categories_Tarj_video" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_Procesadores"
+            app:destination="@id/categories_Procesadores" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_categories_laptops"
+            app:destination="@id/categories_laptops" />
     </fragment>
 
     <fragment
         android:id="@+id/categories_laptops"
         android:name="com.mauricio.moviles_bg2m.categories.CategoriesCompCompleta"
         android:label="Laptops"
-        tools:layout="@layout/fragment_categories_inside" >
+        tools:layout="@layout/fragment_categories_inside">
         <action
             android:id="@+id/action_categories_laptops_to_descriptionProductFragment"
             app:destination="@id/descriptionProductFragment" />
@@ -238,7 +271,7 @@
         android:id="@+id/descriptionProductFragment"
         android:name="com.mauricio.moviles_bg2m.moreFragmentViews.DescriptionProductFragment"
         android:label="Procesadores"
-        tools:layout="@layout/fragment_product_description" >
+        tools:layout="@layout/fragment_product_description">
         <argument
             android:name="imageUrl"
             app:argType="string"

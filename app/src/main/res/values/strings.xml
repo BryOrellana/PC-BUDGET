@@ -115,7 +115,7 @@
     <string name="precio_de_producto">Precio de producto</string>
     <string name="nombre_de_producto">Nombre de producto</string>
     <string name="descripcion">Descripcion</string>
-    <string name="computadora_gaming_1">Nombre de presupuesto</string>
+    <string name="computadora_gaming_1">Presupuesto vacio</string>
     <string name="precio_72_99">Precio: $72.99</string>
     <string name="calificacion">calificacion</string>
     <string name="selected_image">Selected image</string>
@@ -129,4 +129,9 @@
     <string name="nombre_de_tu_presupuesto">Nombre de tu presupuesto:</string>
     <string name="desc_budget">Descripcion de tu presupuesto:</string>
     <string name="ver_articulo_en_amazon">VER ARTICULO EN AMAZON</string>
+    <string name="saveChangesbtntxt">Guardar cambios</string>
+    <string name="delete_btn_txt">Borrar presupuesto</string>
+    <string name="savedBudgetVarning">Acá solo puedes cambiar el nombre y la descripción de presupuesto! Para cambiar los productos ve a presupuesto y elije los productos que deseas y guardalo en el campo de este presupuesto.</string>
+    <string name="avisoSavedBudget">Acá solo puedes cambiar el nombre y descripción del presupuesto. Para cambiar los productos ve a \"Presupuesto\" y cambia los productos que quieras y sobrescribe este presupuesto(Puedes usar el mismo nombre)</string>
+    <string name="noProduct">Aún no has agregado este producto.</string>
 </resources>

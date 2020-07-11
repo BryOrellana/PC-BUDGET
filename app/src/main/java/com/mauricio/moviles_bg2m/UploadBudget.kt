@@ -1,6 +1,7 @@
 package com.mauricio.moviles_bg2m
 
 data class UploadBudget (
+    val bid : String?,
     val bname : String,
     val budgetDesc: String,
     val totalP : String?,
@@ -28,12 +29,12 @@ data class UploadBudget (
     val fpImage : String?,
     val fpName : String?,
     val fpPrice : String?,
-    val cId : String?,
-    val cImage : String?,
-    val cName : String?,
-    val cPrice : String?
+    val cid : String?,
+    val cimage : String?,
+    val cname : String?,
+    val cprice : String?
 ){
-    constructor() : this("","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""){
+    constructor() : this("","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""){
 
     }
 }

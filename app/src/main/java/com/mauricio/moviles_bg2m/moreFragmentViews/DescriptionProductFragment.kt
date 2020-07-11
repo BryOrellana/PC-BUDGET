@@ -34,6 +34,7 @@ import java.net.URL
 class DescriptionProductFragment() : Fragment() {
     private lateinit var binding: FragmentProductDescriptionBinding
     private lateinit var viewModel: observable
+    private lateinit var SBViewModel: SavedBudgetViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,11 +75,13 @@ class DescriptionProductFragment() : Fragment() {
                 binding.nameProduct.text = productsList[0].nameProduct
                 binding.rankProduct.text = productsList[0].productRank
                 binding.descripcionProduct.text = productsList[0].productDesc
+
                 if (productsList[0].productId.substring(0, 1) == "L") {
                     binding.btnAction.visibility = View.GONE
                     binding.amazon.visibility = View.VISIBLE
                     }
                 //d("products", "GetAllProducts " + productsData)
+
                 binding.btnAction.setOnClickListener { view: View ->
                     if (productsList[0].productId.substring(0, 1) == "P") {
                         viewModel.pPrice.value = productsList[0].productPrice
@@ -87,12 +90,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.pImage.value = productsList[0].imageUrl
                         viewModel.pRank.value = productsList[0].productRank
                         viewModel.pDesc.value = productsList[0].productDesc
-
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "G") {
                         viewModel.tgPrice.value = productsList[0].productPrice
@@ -101,11 +98,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.tgImage.value = productsList[0].imageUrl
                         viewModel.tgRank.value = productsList[0].productRank
                         viewModel.tgDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "R") {
                         viewModel.rPrice.value = productsList[0].productPrice
@@ -114,11 +106,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.rImage.value = productsList[0].imageUrl
                         viewModel.rRank.value = productsList[0].productRank
                         viewModel.rDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "T") {
                         viewModel.tmPrice.value = productsList[0].productPrice
@@ -127,11 +114,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.tmImage.value = productsList[0].imageUrl
                         viewModel.tmRank.value = productsList[0].productRank
                         viewModel.tmDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "A") {
                         viewModel.aPrice.value = productsList[0].productPrice
@@ -140,11 +122,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.aImage.value = productsList[0].imageUrl
                         viewModel.aRank.value = productsList[0].productRank
                         viewModel.aDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "F") {
                         viewModel.fpPrice.value = productsList[0].productPrice
@@ -153,11 +130,6 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.fpImage.value = productsList[0].imageUrl
                         viewModel.fpRank.value = productsList[0].productRank
                         viewModel.fpDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
                     if (productsList[0].productId.substring(0, 1) == "C") {
                         viewModel.cPrice.value = productsList[0].productPrice
@@ -166,12 +138,12 @@ class DescriptionProductFragment() : Fragment() {
                         viewModel.cImage.value = productsList[0].imageUrl
                         viewModel.cRank.value = productsList[0].productRank
                         viewModel.cDesc.value = productsList[0].productDesc
-                        Toast.makeText(
-                            context,
-                            "Producto añadido a tu presupuesto",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
+                    Toast.makeText(
+                        context,
+                        "Producto añadido a tu presupuesto",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }
