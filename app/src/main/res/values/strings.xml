@@ -134,4 +134,5 @@
     <string name="savedBudgetVarning">Acá solo puedes cambiar el nombre y la descripción de presupuesto! Para cambiar los productos ve a presupuesto y elije los productos que deseas y guardalo en el campo de este presupuesto.</string>
     <string name="avisoSavedBudget">Acá solo puedes cambiar el nombre y descripción del presupuesto. Para cambiar los productos ve a \"Presupuesto\" y cambia los productos que quieras y sobrescribe este presupuesto(Puedes usar el mismo nombre)</string>
     <string name="noProduct">Aún no has agregado este producto.</string>
+    <string name="name_descInfoFragment">Descripcion del producto:</string>
 </resources>

@@ -390,36 +390,50 @@ class BudgetFragment : Fragment() {
                         viewModel.pId.value?.trim() ?: "",
                         viewModel.pImage.value?.trim() ?: "",
                         viewModel.pName.value?.trim() ?: "",
+                        viewModel.pDesc.value?.trim() ?: "",
+                        viewModel.pRank.value?.trim() ?: "",
                         viewModel.pPrice.value?.trim() ?: "",
 
                         viewModel.tgId.value?.trim() ?: "",
                         viewModel.tgImage.value?.trim() ?: "",
                         viewModel.tgName.value?.trim() ?: "",
+                        viewModel.tgDesc.value?.trim() ?: "",
+                        viewModel.tgRank.value?.trim() ?: "",
                         viewModel.tgPrice.value?.trim() ?: "",
 
                         viewModel.rId.value?.trim() ?: "",
                         viewModel.rImage.value?.trim() ?: "",
                         viewModel.rName.value?.trim() ?: "",
+                        viewModel.rDesc.value?.trim() ?: "",
+                        viewModel.rRank.value?.trim() ?: "",
                         viewModel.rPrice.value?.trim() ?: "",
 
                         viewModel.tmId.value?.trim() ?: "",
                         viewModel.tmImage.value?.trim() ?: "",
                         viewModel.tmName.value?.trim() ?: "",
+                        viewModel.tmDesc.value?.trim() ?: "",
+                        viewModel.tmRank.value?.trim() ?: "",
                         viewModel.tmPrice.value?.trim() ?: "",
 
                         viewModel.aId.value?.trim() ?: "",
                         viewModel.aImage.value?.trim() ?: "",
                         viewModel.aName.value?.trim() ?: "",
+                        viewModel.aDesc.value?.trim() ?: "",
+                        viewModel.aRank.value?.trim() ?: "",
                         viewModel.aPrice.value?.trim() ?: "",
 
                         viewModel.fpId.value?.trim() ?: "",
                         viewModel.fpImage.value?.trim() ?: "",
                         viewModel.fpName.value?.trim() ?: "",
+                        viewModel.fpDesc.value?.trim() ?: "",
+                        viewModel.fpRank.value?.trim() ?: "",
                         viewModel.fpPrice.value?.trim() ?: "",
 
                         viewModel.cId.value?.trim() ?: "",
                         viewModel.cImage.value?.trim() ?: "",
                         viewModel.cName.value?.trim() ?: "",
+                        viewModel.cDesc.value?.trim() ?: "",
+                        viewModel.cRank.value?.trim() ?: "",
                         viewModel.cPrice.value?.trim() ?: ""
                     )
 

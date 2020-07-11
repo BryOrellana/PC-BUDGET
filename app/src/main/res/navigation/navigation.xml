@@ -243,6 +243,9 @@
         <action
             android:id="@+id/action_savedBudgetFragment_to_categories_laptops"
             app:destination="@id/categories_laptops" />
+        <action
+            android:id="@+id/action_savedBudgetFragment_to_productInfo"
+            app:destination="@id/productInfo" />
     </fragment>
 
     <fragment
@@ -270,7 +273,7 @@
     <fragment
         android:id="@+id/descriptionProductFragment"
         android:name="com.mauricio.moviles_bg2m.moreFragmentViews.DescriptionProductFragment"
-        android:label="Procesadores"
+        android:label="@string/name_descInfoFragment"
         tools:layout="@layout/fragment_product_description">
         <argument
             android:name="imageUrl"
@@ -305,7 +308,11 @@
     <fragment
         android:id="@+id/productInfo"
         android:name="com.mauricio.moviles_bg2m.ProductInfo"
-        android:label="fragment_product_info"
-        tools:layout="@layout/fragment_product_info" />
+        android:label="@string/name_descInfoFragment"
+        tools:layout="@layout/fragment_product_info">
+        <argument
+            android:name="bid"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

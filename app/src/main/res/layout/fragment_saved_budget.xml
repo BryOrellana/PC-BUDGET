@@ -636,8 +636,8 @@
 
         <TextView
             android:id="@+id/price_txt_ram"
-            android:layout_width="0dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:text="@string/default_total"
             android:textColor="@color/redColor"
@@ -649,8 +649,8 @@
 
         <TextView
             android:id="@+id/price_txt_tm"
-            android:layout_width="0dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:text="@string/default_total"
             android:textColor="@color/redColor"
@@ -662,8 +662,8 @@
 
         <TextView
             android:id="@+id/price_txt_storage"
-            android:layout_width="0dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:text="@string/default_total"
             android:textColor="@color/redColor"
@@ -675,8 +675,8 @@
 
         <TextView
             android:id="@+id/price_txt_fp"
-            android:layout_width="0dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:text="@string/default_total"
             android:textColor="@color/redColor"
@@ -688,8 +688,8 @@
 
         <TextView
             android:id="@+id/price_txt_case"
-            android:layout_width="0dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:text="@string/default_total"
             android:textColor="@color/redColor"

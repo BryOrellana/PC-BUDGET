@@ -21,6 +21,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.database.FirebaseDatabase
 import com.mauricio.moviles_bg2m.*
+import com.mauricio.moviles_bg2m.databinding.FragmentProductInfoBinding
 import com.mauricio.moviles_bg2m.databinding.FragmentSavedBudgetBinding
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -33,7 +34,6 @@ import java.math.RoundingMode
 
 class SavedBudgetFragment : Fragment() {
     lateinit var binding: FragmentSavedBudgetBinding
-    private lateinit var SBViewModel: SavedBudgetViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,10 +49,6 @@ class SavedBudgetFragment : Fragment() {
             val safeArgs = SavedBudgetFragmentArgs.fromBundle(it)
             val bid = safeArgs.bid
 
-            SBViewModel = activity?.run {
-                ViewModelProviders.of(this).get(SavedBudgetViewModel::class.java)
-            } ?: throw Exception("Invalid Fragment")
-
             val retrofit: Retrofit = Retrofit.Builder().baseUrl("https://pc-budget.firebaseio.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -64,10 +60,87 @@ class SavedBudgetFragment : Fragment() {
                 override fun onResponse(
                     call: Call<UploadBudget>?, response: Response<UploadBudget>?
                 ) {
+                    var productToDescViewModel: ProductDescViewModel
+                    productToDescViewModel = activity?.run {
+                        ViewModelProviders.of(this).get(ProductDescViewModel::class.java)
+                    } ?: throw Exception("Invalid Fragment")
+
                     val BudgetData = response?.body()
                     BudgetList.add(BudgetData!!)
                     d("BUDGETS", "" + BudgetData)
 
+                    binding.apply {
+                        txtAddProcessorStatic.setOnClickListener { view: View ->
+                            if (BudgetData.pid == "P") {
+                                productToDescViewModel.pdName.value = BudgetData.pname
+                                productToDescViewModel.pdPrice.value = BudgetData.pprice
+                                productToDescViewModel.pdImage.value = BudgetData.pimage
+                                productToDescViewModel.pdRank.value = BudgetData.prank
+                                productToDescViewModel.pdDesc.value = BudgetData.pdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        txtAddGraphicStatic.setOnClickListener { view: View ->
+                            if (BudgetData.tgId == "G") {
+                                productToDescViewModel.pdName.value = BudgetData.tgName
+                                productToDescViewModel.pdPrice.value = BudgetData.tgPrice
+                                productToDescViewModel.pdImage.value = BudgetData.tgImage
+                                productToDescViewModel.pdRank.value = BudgetData.tgrank
+                                productToDescViewModel.pdDesc.value = BudgetData.tgdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        nameRamTxt.setOnClickListener { view: View ->
+                            if (BudgetData.rid == "R") {
+                                productToDescViewModel.pdName.value = BudgetData.rname
+                                productToDescViewModel.pdPrice.value = BudgetData.rprice
+                                productToDescViewModel.pdImage.value = BudgetData.rimage
+                                productToDescViewModel.pdRank.value = BudgetData.rrank
+                                productToDescViewModel.pdDesc.value = BudgetData.rdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        nameMotherboard.setOnClickListener { view: View ->
+                            if (BudgetData.tmId == "T") {
+                                productToDescViewModel.pdName.value = BudgetData.tmName
+                                productToDescViewModel.pdPrice.value = BudgetData.tmPrice
+                                productToDescViewModel.pdImage.value = BudgetData.tmImage
+                                productToDescViewModel.pdRank.value = BudgetData.tmrank
+                                productToDescViewModel.pdDesc.value = BudgetData.tmdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        txtAddStorage.setOnClickListener { view: View ->
+                            if (BudgetData.aid == "A") {
+                                productToDescViewModel.pdName.value = BudgetData.aname
+                                productToDescViewModel.pdPrice.value = BudgetData.aprice
+                                productToDescViewModel.pdImage.value = BudgetData.aimage
+                                productToDescViewModel.pdRank.value = BudgetData.arank
+                                productToDescViewModel.pdDesc.value = BudgetData.adesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        txtAddPower.setOnClickListener { view: View ->
+                            if (BudgetData.fpId == "F") {
+                                productToDescViewModel.pdName.value = BudgetData.fpName
+                                productToDescViewModel.pdPrice.value = BudgetData.fpPrice
+                                productToDescViewModel.pdImage.value = BudgetData.fpImage
+                                productToDescViewModel.pdRank.value = BudgetData.fprank
+                                productToDescViewModel.pdDesc.value = BudgetData.fpdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                        nameCase.setOnClickListener { view: View ->
+                            if (BudgetData.cid == "C") {
+                                productToDescViewModel.pdName.value = BudgetData.cname
+                                productToDescViewModel.pdPrice.value = BudgetData.cprice
+                                productToDescViewModel.pdImage.value = BudgetData.cimage
+                                productToDescViewModel.pdRank.value = BudgetData.crank
+                                productToDescViewModel.pdDesc.value = BudgetData.cdesc
+                                view.findNavController().navigate(R.id.action_savedBudgetFragment_to_productInfo)
+                            }
+                        }
+                    }
 
                     binding.etNameBudget.setText(BudgetData.bname)
                     binding.etDescBudget.setText(BudgetData.budgetDesc)
@@ -208,54 +281,34 @@ class SavedBudgetFragment : Fragment() {
     }
 
     private fun btnAddCircleAlert() {
-        binding.imgProcessorAdd.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.imgGraphicAdded.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.btnAddRam.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.imgMotherboardAdded.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.btnAddStorage.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.btnAddPower.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-        binding.btnAddCase.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Ve a presupuesto y sobre escribe este presupuesto para cambiar los productos!",
-                Toast.LENGTH_SHORT
-            ).show()
+        arguments?.let {
+            val safeArgs = SavedBudgetFragmentArgs.fromBundle(it)
+            val bid = safeArgs.bid
+
+            binding.txtAddProcessorStatic.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+
+            binding.txtAddGraphicStatic.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+            binding.nameRamTxt.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+            binding.nameMotherboard.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+
+            binding.txtAddStorage.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+            binding.txtAddPower.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
+
+            binding.nameCase.setOnClickListener {view : View ->
+                Navigation.findNavController(view).navigate(SavedBudgetFragmentDirections.actionSavedBudgetFragmentToProductInfo(bid))
+            }
         }
     }
 
@@ -271,37 +324,44 @@ class SavedBudgetFragment : Fragment() {
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
                     "",
                     "",
                     "",
                     "",
-
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
                     "",
                     "",
                     "",
@@ -354,36 +414,50 @@ class SavedBudgetFragment : Fragment() {
                         viewModel.pId.value?.trim() ?: "",
                         viewModel.pImage.value?.trim() ?: "",
                         viewModel.pName.value?.trim() ?: "",
+                        viewModel.pDesc.value?.trim() ?: "",
+                        viewModel.pRank.value?.trim() ?: "",
                         viewModel.pPrice.value?.trim() ?: "",
 
                         viewModel.tgId.value?.trim() ?: "",
                         viewModel.tgImage.value?.trim() ?: "",
                         viewModel.tgName.value?.trim() ?: "",
+                        viewModel.tgDesc.value?.trim() ?: "",
+                        viewModel.tgRank.value?.trim() ?: "",
                         viewModel.tgPrice.value?.trim() ?: "",
 
                         viewModel.rId.value?.trim() ?: "",
                         viewModel.rImage.value?.trim() ?: "",
                         viewModel.rName.value?.trim() ?: "",
+                        viewModel.rDesc.value?.trim() ?: "",
+                        viewModel.rRank.value?.trim() ?: "",
                         viewModel.rPrice.value?.trim() ?: "",
 
                         viewModel.tmId.value?.trim() ?: "",
                         viewModel.tmImage.value?.trim() ?: "",
                         viewModel.tmName.value?.trim() ?: "",
+                        viewModel.tmDesc.value?.trim() ?: "",
+                        viewModel.tmRank.value?.trim() ?: "",
                         viewModel.tmPrice.value?.trim() ?: "",
 
                         viewModel.aId.value?.trim() ?: "",
                         viewModel.aImage.value?.trim() ?: "",
                         viewModel.aName.value?.trim() ?: "",
+                        viewModel.aDesc.value?.trim() ?: "",
+                        viewModel.aRank.value?.trim() ?: "",
                         viewModel.aPrice.value?.trim() ?: "",
 
                         viewModel.fpId.value?.trim() ?: "",
                         viewModel.fpImage.value?.trim() ?: "",
                         viewModel.fpName.value?.trim() ?: "",
+                        viewModel.fpDesc.value?.trim() ?: "",
+                        viewModel.fpRank.value?.trim() ?: "",
                         viewModel.fpPrice.value?.trim() ?: "",
 
                         viewModel.cId.value?.trim() ?: "",
                         viewModel.cImage.value?.trim() ?: "",
                         viewModel.cName.value?.trim() ?: "",
+                        viewModel.cDesc.value?.trim() ?: "",
+                        viewModel.cRank.value?.trim() ?: "",
                         viewModel.cPrice.value?.trim() ?: ""
                     )
 
